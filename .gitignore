@@ -17,6 +17,10 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore foreman env files
+*.env
+*.swp
+
 # Ignore Byebug command history file.
 .byebug_history
 
