@@ -185,9 +185,12 @@ footer { font-size: .85em; margin-bottom: 20px; }
 
 /** Media Queries / Responsive **/
 @media
-	only screen and (max-width: 480px),
-	(min-device-width: 360px) and (max-device-width: 480px)  {
-    #navigation { top: 55px; margin-bottom: 40px; }
+	only screen and (max-width: 465px)  {
+    #navigation { top: 53px; margin-bottom: 40px; }
+}
+@media
+	only screen and (min-width: 466px) and (max-width: 760px)  {
+    #navigation { top: 18px; margin-bottom: 18px; }
 }
 @media
 	only screen and (max-width: 760px),
@@ -195,7 +198,7 @@ footer { font-size: .85em; margin-bottom: 20px; }
 
     #splash_logo { width: 256px; height: 112.5px; }
     #navigation ul li { height: 16px; font-size: .8em; }
-    #navigation ul li a { height: 16px; padding-top: 2px; }
+    #navigation ul li a { height: 16px; padding-top: 1px; }
     /* Force table to not be like tables anymore */
     table { font-size: .9em; }
 		table, thead, tbody, th, td, tr { display: block; }
