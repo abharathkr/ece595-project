@@ -97,10 +97,12 @@ h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
 /** Tables **/
 .detail-table { width: 100%; }
 .detail-table th { color: #004D40; background: #E0F2F1; }
-.detail-table tr:nth-child(even) { background: #ECEFF1 }
-.detail-table tr:nth-child(even) {background: #FFF}
+tr:nth-child(even) { background: #FBFBFB; }
+tr:nth-of-type(odd) { background: #FFF;  }
+tr:hover { background: #ECEFF1; }
 
 .match-table th { width: 33%; }
+
 
 #contact_options { list-style-type: none; text-align: left; }
 #contact_options li {
@@ -180,3 +182,90 @@ hr {
 
 /** Footer **/
 footer { font-size: .85em; margin-bottom: 20px; }
+
+/** Media Queries / Responsive **/
+@media
+	only screen and (max-width: 480px),
+	(min-device-width: 360px) and (max-device-width: 480px)  {
+    #navigation { top: 55px; margin-bottom: 40px; }
+}
+@media
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    #splash_logo { width: 256px; height: 112.5px; }
+    #navigation ul li { height: 16px; font-size: .8em; }
+    #navigation ul li a { height: 16px; padding-top: 2px; }
+    /* Force table to not be like tables anymore */
+    table { font-size: .9em; }
+		table, thead, tbody, th, td, tr { display: block; }
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { position: absolute; top: -9999px; left: -9999px; }
+    tr { margin-bottom: 2px; padding: 5px; }
+    td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 0px solid #eee;
+			position: relative;
+			padding-left: 50%;
+      margin-bottom: 2px;
+      text-align: right;
+		}
+    td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 25%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+    .detail-table td:before { text-align:left; text-transform:  uppercase; font-size: .8em; font-weight:bold; color: #00695C; }
+    .candidate-table td:nth-of-type(1):before { content: "Last Name"; }
+		.candidate-table td:nth-of-type(2):before { content: "First Name"; }
+		.candidate-table td:nth-of-type(3):before { content: "Party"; }
+		.candidate-table td:nth-of-type(4):before { content: "Encumbent"; }
+		.candidate-table td:nth-of-type(5):before { content: "District"; }
+		.candidate-table td:nth-of-type(6):before { content: "E-Mail"; }
+		.candidate-table td:nth-of-type(7):before { content: "Website"; }
+		.candidate-table td:nth-of-type(8):before { content: "Details"; }
+
+    .candidate-stance-table td:nth-of-type(1):before { content: "Topic"; }
+		.candidate-stance-table td:nth-of-type(2):before { content: "Stance"; }
+		.candidate-stance-table td:nth-of-type(3):before { content: "Stance Source"; }
+		.candidate-stance-table td:nth-of-type(4):before { content: "Details"; }
+
+    .past-terms-table td:nth-of-type(1):before { content: "Position Title"; }
+		.past-terms-table td:nth-of-type(2):before { content: "Term Start"; }
+		.past-terms-table td:nth-of-type(3):before { content: "Term End"; }
+
+    .judge-table td:nth-of-type(1):before { content: "Last Name"; }
+		.judge-table td:nth-of-type(2):before { content: "First Name"; }
+		.judge-table td:nth-of-type(3):before { content: "Party"; }
+		.judge-table td:nth-of-type(4):before { content: "Sitting"; }
+		.judge-table td:nth-of-type(5):before { content: "District"; }
+		.judge-table td:nth-of-type(6):before { content: "E-Mail"; }
+		.judge-table td:nth-of-type(7):before { content: "Details"; }
+
+    .judge-decision-table td:nth-of-type(1):before { content: "Title"; }
+		.judge-decision-table td:nth-of-type(2):before { content: "Decision"; }
+		.judge-decision-table td:nth-of-type(3):before { content: "Decision Source"; }
+
+    .bond-table td:nth-of-type(1):before, .issue-table td:nth-of-type(1):before { content: "Title"; }
+		.bond-table td:nth-of-type(2):before, .issue-table td:nth-of-type(2):before { content: "Description"; }
+		.bond-table td:nth-of-type(3):before, .issue-table td:nth-of-type(3):before { content: "Type"; }
+		.bond-table td:nth-of-type(4):before, .issue-table td:nth-of-type(4):before { content: "Details"; }
+
+    .issue-stance-table td:nth-of-type(1):before { content: "Last Name"; }
+		.issue-stance-table td:nth-of-type(2):before { content: "First Name"; }
+		.issue-stance-table td:nth-of-type(3):before { content: "Stance"; }
+		.issue-stance-table td:nth-of-type(4):before { content: "Details"; }
+
+    .match-results-table td:nth-of-type(1):before { content: "You"; }
+		.match-results-table td:nth-of-type(2):before { content: "Match"; }
+		.match-results-table td:nth-of-type(3):before { content: "Them"; }
+    .match .match-results-table .match-table-question:before { content: ""; }
+
+  }
