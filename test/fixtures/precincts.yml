@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  precinct_num: MyString
+  precinct_type: MyString
+  city: one
+
+two:
+  precinct_num: MyString
+  precinct_type: MyString
+  city: two

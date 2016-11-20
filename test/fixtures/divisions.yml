@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  division_num: MyString
+  division_type: MyString
+  precinct: one
+
+two:
+  division_num: MyString
+  division_type: MyString
+  precinct: two

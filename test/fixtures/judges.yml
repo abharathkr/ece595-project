@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  isSitting: false
+  biography: MyText
+  email: MyString
+  pol_Aff: MyString
+  ballot: one
+  precinct: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  isSitting: false
+  biography: MyText
+  email: MyString
+  pol_Aff: MyString
+  ballot: two
+  precinct: two

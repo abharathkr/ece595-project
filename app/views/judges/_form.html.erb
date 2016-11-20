@@ -1,0 +1,57 @@
+<%= form_for(judge) do |f| %>
+  <% if judge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(judge.errors.count, "error") %> prohibited this judge from being saved:</h2>
+
+      <ul>
+      <% judge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :isSitting %>
+    <%= f.check_box :isSitting %>
+  </div>
+
+  <div class="field">
+    <%= f.label :biography %>
+    <%= f.text_area :biography %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pol_Aff %>
+    <%= f.text_field :pol_Aff %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ballot_id %>
+    <%= f.text_field :ballot_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precinct_id %>
+    <%= f.text_field :precinct_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

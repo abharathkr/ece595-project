@@ -5,12 +5,12 @@
 <p>
     <strong>myVote</strong>
     serves as a way to to get all those answers in one place. Review the
-    <%= link_to "candidates", candidates_path %>,
-    <%= link_to "judges", judges_path %>,
-    <%= link_to "issues", issues_path %>, and
-    <%= link_to "bonds", bonds_path %>,
+    <%= link_to "candidates", h_candidates_path %>,
+    <%= link_to "judges", h_judges_path %>,
+    <%= link_to "issues", h_issues_path %>, and
+    <%= link_to "bonds", h_bonds_path %>,
     for your area, and use our
-    <%= link_to "completely anonymous matching tool", match_path %>
+    <%= link_to "completely anonymous matching tool", h_match_path %>
     to find the candidate that supports the issues you care about.
     <strong>No registration required.</strong>
 </p>
