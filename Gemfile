@@ -5,8 +5,6 @@ gem 'devise'
 gem 'authority'
 gem 'rolify'
 gem 'pundit'
-# Stuff for Testing
-gem 'rspec', '~> 3.0'
 # For div_for elements
 gem 'record_tag_helper', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
