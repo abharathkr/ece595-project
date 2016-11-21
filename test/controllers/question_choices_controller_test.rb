@@ -17,7 +17,7 @@ class QuestionChoicesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create question_choice" do
     assert_difference('QuestionChoice.count') do
-      post question_choices_url, params: { question_choice: { choice: @question_choice.choice, question_id: @question_choice.question_id } }
+      post question_choices_url, params: { question_choice: { candidate_id: @question_choice.candidate_id, choice_id: @question_choice.choice_id, question_id: @question_choice.question_id, voter_id: @question_choice.voter_id } }
     end
 
     assert_redirected_to question_choice_url(QuestionChoice.last)
@@ -34,7 +34,7 @@ class QuestionChoicesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update question_choice" do
-    patch question_choice_url(@question_choice), params: { question_choice: { choice: @question_choice.choice, question_id: @question_choice.question_id } }
+    patch question_choice_url(@question_choice), params: { question_choice: { candidate_id: @question_choice.candidate_id, choice_id: @question_choice.choice_id, question_id: @question_choice.question_id, voter_id: @question_choice.voter_id } }
     assert_redirected_to question_choice_url(@question_choice)
   end
 

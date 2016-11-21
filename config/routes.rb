@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :question_choices
+  resources :choices
   resources :decisions
   resources :judges
-  resources :question_choices
   resources :questions
   resources :stances
   resources :referendas

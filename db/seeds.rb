@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#Candidates
 hillary = Candidate.new
 hillary.first_name = "Hillary"
 hillary.last_name = "Clinton"
@@ -38,6 +39,27 @@ Term.create(position_title: "First Lady of the United States", termStart: Date.p
 Term.create(position_title: "United States Senator (NY)", termStart: Date.parse("2001-1-3"), termEnd: Date.parse("2009-1-21"), candidate_id: '1')
 Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-21"), termEnd: Date.parse("2013-2-1"), candidate_id: '1')
 
+#Trump Terms
+
+#Questions
+Question.create(question: "Do you support raising minimum wage?", question_desc: "The federal minimum wage for covered nonexempt employees is $7.25 per hour effective July 24, 2009. The federal minimum wage provisions are contained in the Fair Labor Standards Act (FLSA). Many states also have minimum wage laws.") #1
+Question.create(question: "Where do you stand on trade agreements?", question_desc: "The goal of the North American Free Trade Agreement (NAFTA) was to eliminate barriers to trade and investment between the U.S., Canada and Mexico. The goal of the Trans-Pacific Partnership (TPP) is to promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; raise living standards; reduce poverty in the signatories' countries; and promote transparency, good governance, and enhanced labor and environmental protections.") #2
+Question.create(question: "What is your position on same-sex marriage?") #3
+Question.create(question: "What is your position on gun control?") #4
+Question.create(question: "What is your position on abortion?") #5
+Question.create(question: "What is your position on healthcare?") #6
+Question.create(question: "Where do you stand on the US' involvement in foreign affairs?") #7
+Question.create(question: "Where do you stand on immigration?") #8
+Question.create(question: "What is your opinion on money in politics?") #9
+Question.create(question: "What would you like done in regards to taxes?") #10
+
+#Choices
+Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')
+Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
+Choice.create(choice: "For NAFTA & TPP", question_id: '2')
+Choice.create(choice: "Against NAFTA & TPP", question_id: '2')
+Choice.create(choice: "For NAFTA, Against TPP", question_id: '2')
+Choice.create(choice: "Against NAFTA, For TPP", question_id: '2')
 
 #Precinct test
 Precinct.create(precinct_num: '1', precinct_type: "National", city_id: '1')

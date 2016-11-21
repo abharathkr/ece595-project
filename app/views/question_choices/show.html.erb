@@ -10,5 +10,15 @@
   <%= @question_choice.question %>
 </p>
 
+<p>
+  <strong>Voter:</strong>
+  <%= @question_choice.voter %>
+</p>
+
+<p>
+  <strong>Candidate:</strong>
+  <%= @question_choice.candidate %>
+</p>
+
 <%= link_to 'Edit', edit_question_choice_path(@question_choice) %> |
 <%= link_to 'Back', question_choices_path %>

@@ -131,7 +131,8 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-.choice { white-space: nowrap; }
+.choice { white-space: nowrap; line-height: 200%; }
+.question_desc { font-size: .85em; background-color: #ECEFF1; padding: 5px !important; color: #546E7A; border-radius: 3px; border: 1px solid #546E7A; }
 
 #submit-match, #mail-results {
   -webkit-appearance: none;

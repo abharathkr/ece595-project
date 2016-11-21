@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121180133) do
+ActiveRecord::Schema.define(version: 20161121184826) do
 
   create_table "ballots", force: :cascade do |t|
     t.string   "election_year"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20161121180133) do
     t.string   "office_type"
     t.index ["ballot_id"], name: "index_candidates_on_ballot_id"
     t.index ["precinct_id"], name: "index_candidates_on_precinct_id"
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string   "choice"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -105,11 +113,16 @@ ActiveRecord::Schema.define(version: 20161121180133) do
   end
 
   create_table "question_choices", force: :cascade do |t|
-    t.string   "choice"
+    t.integer  "choice_id"
     t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "voter_id"
+    t.integer  "candidate_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["candidate_id"], name: "index_question_choices_on_candidate_id"
+    t.index ["choice_id"], name: "index_question_choices_on_choice_id"
     t.index ["question_id"], name: "index_question_choices_on_question_id"
+    t.index ["voter_id"], name: "index_question_choices_on_voter_id"
   end
 
   create_table "questions", force: :cascade do |t|
