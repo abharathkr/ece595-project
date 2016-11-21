@@ -227,14 +227,13 @@ footer { font-size: .85em; margin-bottom: 20px; }
 			white-space: nowrap;
 		}
     .detail-table td:before { text-align:left; text-transform:  uppercase; font-size: .8em; font-weight:bold; color: #00695C; }
-    .candidate-table td:nth-of-type(1):before { content: "Last Name"; }
-		.candidate-table td:nth-of-type(2):before { content: "First Name"; }
-		.candidate-table td:nth-of-type(3):before { content: "Party"; }
-		.candidate-table td:nth-of-type(4):before { content: "Encumbent"; }
-		.candidate-table td:nth-of-type(5):before { content: "District"; }
-		.candidate-table td:nth-of-type(6):before { content: "E-Mail"; }
-		.candidate-table td:nth-of-type(7):before { content: "Website"; }
-		.candidate-table td:nth-of-type(8):before { content: "Details"; }
+    .candidate-table td:nth-of-type(1):before { content: "Name"; }
+		.candidate-table td:nth-of-type(2):before { content: "Party"; }
+		.candidate-table td:nth-of-type(3):before { content: "Encumbent"; }
+		.candidate-table td:nth-of-type(4):before { content: "Candidacy"; }
+		.candidate-table td:nth-of-type(5):before { content: "E-Mail"; }
+		.candidate-table td:nth-of-type(6):before { content: "Website"; }
+		.candidate-table td:nth-of-type(7):before { content: "Details"; }
 
     .candidate-stance-table td:nth-of-type(1):before { content: "Topic"; }
 		.candidate-stance-table td:nth-of-type(2):before { content: "Stance"; }
@@ -245,17 +244,17 @@ footer { font-size: .85em; margin-bottom: 20px; }
 		.past-terms-table td:nth-of-type(2):before { content: "Term Start"; }
 		.past-terms-table td:nth-of-type(3):before { content: "Term End"; }
 
-    .judge-table td:nth-of-type(1):before { content: "Last Name"; }
-		.judge-table td:nth-of-type(2):before { content: "First Name"; }
-		.judge-table td:nth-of-type(3):before { content: "Party"; }
-		.judge-table td:nth-of-type(4):before { content: "Sitting"; }
-		.judge-table td:nth-of-type(5):before { content: "District"; }
-		.judge-table td:nth-of-type(6):before { content: "E-Mail"; }
-		.judge-table td:nth-of-type(7):before { content: "Details"; }
+    .judge-table td:nth-of-type(1):before { content: "Name"; }
+		.judge-table td:nth-of-type(2):before { content: "Party"; }
+		.judge-table td:nth-of-type(3):before { content: "Sitting"; }
+		.judge-table td:nth-of-type(4):before { content: "Precinct"; }
+		.judge-table td:nth-of-type(5):before { content: "E-Mail"; }
+		.judge-table td:nth-of-type(6):before { content: "Details"; }
 
     .judge-decision-table td:nth-of-type(1):before { content: "Title"; }
 		.judge-decision-table td:nth-of-type(2):before { content: "Decision"; }
-		.judge-decision-table td:nth-of-type(3):before { content: "Decision Source"; }
+    .judge-decision-table td:nth-of-type(3):before { content: "Date"; }
+		.judge-decision-table td:nth-of-type(4):before { content: "Decision Source"; }
 
     .bond-table td:nth-of-type(1):before, .issue-table td:nth-of-type(1):before { content: "Title"; }
 		.bond-table td:nth-of-type(2):before, .issue-table td:nth-of-type(2):before { content: "Description"; }

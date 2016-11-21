@@ -8,7 +8,7 @@
     <%= @countries.first.country_name %>
   <% end %></h2>
 <ul id="contact_options">
-    <li><a href="mailto:{{email}}">E-mail</a></li>
+    <li><a href="mailto:<%= @judge.email %>">E-mail</a></li>
 </ul>
 <p><%= @judge.biography %></p>
 <h3>Recent Decisions</h3>
