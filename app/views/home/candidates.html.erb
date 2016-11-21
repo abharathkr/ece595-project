@@ -14,25 +14,17 @@
         </tr>
     </thead>
     <tbody>
+      <% @candidates.each do |candidate| %>
         <tr>
-            <td>{{last_name}}</td>
-            <td>{{first_name}}</td>
-            <td>{{pol_aff}}</td>
-            <td>{{isEncumbent}}</td>
-            <td>{{precinct_id}}</td>
-            <td>{{email}}</td>
-            <td>{{pol_URL}}</td>
-            <td><a href="{{this_will_link_to_candidate}}">More&hellip;</a></td>
+            <td><%= candidate.last_name %></td>
+            <td><%= candidate.first_name %></td>
+            <td><%= candidate.pol_Aff %></td>
+            <td><%= candidate.isEncumbent %></td>
+            <!--<td><%= candidate.precinct_id %></td>-->
+            <td><%= candidate.email %></td>
+            <td><a href="<%= candidate.precinct_id %>">Website</a></td>
+            <td><%= link_to 'More&hellip;', candidate %></td>
         </tr>
-        <tr>
-            <td>{{last_name}}</td>
-            <td>{{first_name}}</td>
-            <td>{{pol_aff}}</td>
-            <td>{{isEncumbent}}</td>
-            <td>{{district_id}}</td>
-            <td>{{email}}</td>
-            <td>{{pol_URL}}</td>
-            <td><a href="{{this_will_link_to_candidate}}">More&hellip;</a></td>
-        </tr>
+    <% end %>
     </tbody>
 </table>

@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def match_results
+  def index
+    @candidates = Candidate.all
   end
 end
