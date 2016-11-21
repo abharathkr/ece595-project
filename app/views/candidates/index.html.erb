@@ -1,43 +1,28 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Candidates</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Isencumbent</th>
-      <th>Biography</th>
-      <th>Email</th>
-      <th>Pol url</th>
-      <th>Pol aff</th>
-      <th>Haspicture</th>
-      <th>Running for</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @candidates.each do |candidate| %>
-      <tr>
-        <td><%= candidate.first_name %></td>
-        <td><%= candidate.last_name %></td>
-        <td><%= candidate.isEncumbent %></td>
-        <td><%= candidate.biography %></td>
-        <td><%= candidate.email %></td>
-        <td><%= candidate.pol_URL %></td>
-        <td><%= candidate.pol_Aff %></td>
-        <td><%= candidate.hasPicture %></td>
-        <td><%= candidate.running_for %></td>
-        <td><%= link_to 'Show', candidate %></td>
-        <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
-        <td><%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<p>Select a candidate&hellip;</p>
+<table class="detail-table candidate-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Party</th>
+            <th>Encumbent</th>
+            <th>Candidacy</th>
+            <th>E-Mail</th>
+            <th>Website</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @candidates.each do |candidate| %>
+        <tr>
+            <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+            <td><%= candidate.pol_Aff %></td>
+            <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
+            <td><%= candidate.running_for %></td>
+            <td><% if candidate.email.present? %><a href="mailto:<%= candidate.email %>"><%= candidate.email %></a><% else %>N/A<% end%></td>
+            <td><% if candidate.pol_URL.present? %><a href="<%= candidate.pol_URL %>">Link</a><% else %>N/A<% end%></td>
+            <td><%= link_to 'More...', candidate %></td>
+        </tr>
     <% end %>
-  </tbody>
+    </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Candidate', new_candidate_path %>

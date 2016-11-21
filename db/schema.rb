@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121142318) do
+ActiveRecord::Schema.define(version: 20161121180133) do
 
   create_table "ballots", force: :cascade do |t|
     t.string   "election_year"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20161121142318) do
     t.datetime "updated_at",  null: false
     t.integer  "ballot_id"
     t.integer  "precinct_id"
+    t.string   "office_type"
     t.index ["ballot_id"], name: "index_candidates_on_ballot_id"
     t.index ["precinct_id"], name: "index_candidates_on_precinct_id"
   end

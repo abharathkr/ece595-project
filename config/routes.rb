@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   resources :countries
   resources :terms
   resources :candidates
-  get 'home/match_results', to: 'home#match_results', as: 'h_match_results'
-  get 'home/match', to: 'home#match', as: 'h_match'
+  get 'home/match_results', to: 'home#match_results', as: 'match_results'
+  get 'home/match', to: 'home#match', as: 'match'
   get 'home/bond_detail', to: 'home#bond_detail', as: 'h_bond_detail'
   get 'home/bonds', to: 'home#bonds', as: 'h_bonds'
   get 'home/issue_detail', to: 'home#issue_detail', as: 'h_issue_detail'

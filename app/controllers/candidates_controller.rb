@@ -10,6 +10,14 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
+    @terms = Term.where(candidate_id: @candidate.id).order(termStart: :desc)
+    if @candidate.precinct_id.present?
+      @precincts = Precinct.where(id: @candidate.precinct_id)
+      @cities = City.where(id: @precincts.first.city_id)
+      @counties = County.where(id: @cities.first.county_id)
+      @states = State.where(id: @counties.first.state_id)
+      @countries = Country.where(id: @states.first.country_id)
+    end
   end
 
   # GET /candidates/new

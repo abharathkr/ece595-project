@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def index
+  def candidates
     @candidates = Candidate.all
   end
 end

@@ -1,49 +1,58 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @candidate.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @candidate.last_name %>
-</p>
-
-<p>
-  <strong>Isencumbent:</strong>
-  <%= @candidate.isEncumbent %>
-</p>
-
-<p>
-  <strong>Biography:</strong>
-  <%= @candidate.biography %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @candidate.email %>
-</p>
-
-<p>
-  <strong>Pol url:</strong>
-  <%= @candidate.pol_URL %>
-</p>
-
-<p>
-  <strong>Pol aff:</strong>
-  <%= @candidate.pol_Aff %>
-</p>
-
-<p>
-  <strong>Haspicture:</strong>
-  <%= @candidate.hasPicture %>
-</p>
-
-<p>
-  <strong>Running for:</strong>
-  <%= @candidate.running_for %>
-</p>
-
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+<h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
+<h2>Candidacy: <%= @candidate.running_for %> (<%= @candidate.office_type %>)<br />
+Last Political Position: <% if @terms.present? %><%= @terms.first.position_title %><% else %>None<% end %>
+<% if @candidate.isEncumbent == true %>Yes,<% end %><br />
+<%= @candidate.pol_Aff %><br />
+<% if @candidate.precinct_id.present? %>
+  Precinct: <%= @precincts.first.precinct_num %>,
+  <%= @cities.first.city_name %>,
+  <%= @counties.first.county_name %>,
+  <%= @states.first.state_name %>,
+  <%= @countries.first.country_name %>
+<% end %>
+</h2>
+<ul id="contact_options">
+    <li><a href="mailto:<%= @candidate.email %>">E-mail</a></li>
+    <li><a href="<%= @candidate.pol_URL %>">Website</a></li>
+</ul>
+<p><%= @candidate.biography %></p>
+<h3>Positions</h3>
+<table class="detail-table candidate-stance-table">
+  <thead>
+      <tr>
+          <th>Topic</th>
+          <th>Stance</th>
+          <th>Stance Source</th>
+          <th>Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>{{referenda.title}}</td>
+          <td>{{stance.stance}}</td>
+          <td>{{stance.stance_source_URL}}</td>
+          <td><a href="{{this_will_link_to_referenda_or_issue}}">More&hellip;</a></td>
+      </tr>
+  </tbody>
+</table>
+<% if @terms.present? %>
+  <h3>Past Terms</h3>
+  <table class="detail-table past-terms-table">
+      <thead>
+          <tr>
+              <th>Position Title</th>
+              <th>Term Start</th>
+              <th>Term End</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @terms.each do |term| %>
+          <tr>
+              <td><%= term.position_title %></td>
+              <td><%= term.termStart %></td>
+              <td><%= term.termEnd %></td>
+          </tr>
+          <% end %>
+      </tbody>
+  </table>
+<% end %>

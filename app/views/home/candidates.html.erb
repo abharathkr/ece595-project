@@ -20,10 +20,10 @@
             <td><%= candidate.first_name %></td>
             <td><%= candidate.pol_Aff %></td>
             <td><%= candidate.isEncumbent %></td>
-            <!--<td><%= candidate.precinct_id %></td>-->
-            <td><%= candidate.email %></td>
-            <td><a href="<%= candidate.precinct_id %>">Website</a></td>
-            <td><%= link_to 'More&hellip;', candidate %></td>
+            <td><%= candidate.precinct_id %></td>
+            <td><a href="mailto:<%= candidate.email %>"><%= candidate.email %></a></td>
+            <td><a href="#">Link</a></td>
+            <td><%= link_to 'More...', candidate %></td>
         </tr>
     <% end %>
     </tbody>
