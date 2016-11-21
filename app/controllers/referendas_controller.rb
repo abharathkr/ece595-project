@@ -4,7 +4,11 @@ class ReferendasController < ApplicationController
   # GET /referendas
   # GET /referendas.json
   def index
-    @referendas = Referenda.all
+    if params[:type]
+      @referendas = Referenda.where(:referenda_type => params[:type])
+    else
+      @referendas = Referenda.all
+    end
   end
 
   # GET /referendas/1
