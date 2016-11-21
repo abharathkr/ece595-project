@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @referenda.referenda_title %></h1>
+<h2><%= @referenda.referenda_type.humanize %></h2>
+<p><%= @referenda.referenda_desc %></p>
 
-<p>
-  <strong>Referenda title:</strong>
-  <%= @referenda.referenda_title %>
-</p>
-
-<p>
-  <strong>Referenda desc:</strong>
-  <%= @referenda.referenda_desc %>
-</p>
-
-<p>
-  <strong>Referenda type:</strong>
-  <%= @referenda.referenda_type %>
-</p>
-
-<p>
-  <strong>Ballot:</strong>
-  <%= @referenda.ballot %>
-</p>
-
-<%= link_to 'Edit', edit_referenda_path(@referenda) %> |
-<%= link_to 'Back', referendas_path %>
+<h3>Candidates' Stances</h3>
+<table class="detail-table issue-stance-table">
+    <thead>
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Stance</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{candidate.last_name}}</td>
+            <td>{{candidate.first_name}}</td>
+            <td>{{stance.stance}}</td>
+            <td><a href="{{this_will_link_to_candidate}}">More&hellip;</a></td>
+        </tr>
+    </tbody>
+</table>

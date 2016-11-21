@@ -1,6 +1,6 @@
 <h1>Referendas</h1>
-<% if params[:type].present? %><h2><% if params[:type] == "bonds" %>Bonds<% elsif params[:type] == "issues" %>Issues<% end %></h2><% end %>
-<p>Select an issue&hellip;</p>
+<% if params[:type].present? %><h2><% if params[:type] == "bonds" || params[:type] == "issues" %><%= params[:type].humanize %><% end %></h2><% end %>
+<p>Displaying (<%= @referendas.size %>) Referenda(s)&hellip;</p>
 <table class="detail-table issue-table">
     <thead>
         <tr>
@@ -11,17 +11,13 @@
         </tr>
     </thead>
     <tbody>
+      <% @referendas.each do |referenda| %>
         <tr>
-            <td>{{referenda.title}}</td>
-            <td>{{referenda.desc}}</td>
-            <td>{{referenda.type}}</td>
-            <td><a href="{{this_will_link_to_an_issue}}">More&hellip;</a></td>
+            <td><%= referenda.referenda_title %></td>
+            <td><%= referenda.referenda_desc %></td>
+            <td><%= referenda.referenda_type %></td>
+            <td><%= link_to 'More...', referenda %></td>
         </tr>
-        <tr>
-            <td>{{referenda.title}}</td>
-            <td>{{referenda.desc}}</td>
-            <td>{{referenda.type}}</td>
-            <td><a href="{{this_will_link_to_an_issue}}">More&hellip;</a></td>
-        </tr>
+      <% end %>
     </tbody>
 </table>
