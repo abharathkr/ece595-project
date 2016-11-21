@@ -41,6 +41,8 @@ Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-
 
 #Trump Terms
 
+#Judge
+
 #Questions
 Question.create(question: "Do you support raising the federal or state minimum wage?", question_desc: "The federal minimum wage for covered nonexempt employees is $7.25 per hour effective July 24, 2009. The federal minimum wage provisions are contained in the Fair Labor Standards Act (FLSA). Many states also have minimum wage laws.") #1
 Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')

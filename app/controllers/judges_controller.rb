@@ -10,6 +10,14 @@ class JudgesController < ApplicationController
   # GET /judges/1
   # GET /judges/1.json
   def show
+    @decisions = Decision.where(judge_id: @judge.id).order(decision_date: :desc)
+    if @judge.precinct_id.present?
+      @precincts = Precinct.where(id: @judge.precinct_id)
+      @cities = City.where(id: @precincts.first.city_id)
+      @counties = County.where(id: @cities.first.county_id)
+      @states = State.where(id: @counties.first.state_id)
+      @countries = Country.where(id: @states.first.country_id)
+    end
   end
 
   # GET /judges/new

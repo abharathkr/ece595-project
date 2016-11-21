@@ -1,44 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @judge.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @judge.last_name %>
-</p>
-
-<p>
-  <strong>Issitting:</strong>
-  <%= @judge.isSitting %>
-</p>
-
-<p>
-  <strong>Biography:</strong>
-  <%= @judge.biography %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @judge.email %>
-</p>
-
-<p>
-  <strong>Pol aff:</strong>
-  <%= @judge.pol_Aff %>
-</p>
-
-<p>
-  <strong>Ballot:</strong>
-  <%= @judge.ballot %>
-</p>
-
-<p>
-  <strong>Precinct:</strong>
-  <%= @judge.precinct %>
-</p>
-
-<%= link_to 'Edit', edit_judge_path(@judge) %> |
-<%= link_to 'Back', judges_path %>
+<h1><%= @judge.first_name %> <%= @judge.last_name %></h1>
+<h2><% if @judge.isSitting %>Currently a Sitting Judge,<% end%> <%= @judge.pol_Aff %><br />
+  <% if @judge.precinct_id.present? %>
+    Precinct: <%= @precincts.first.precinct_num %>,
+    <%= @cities.first.city_name %>,
+    <%= @counties.first.county_name %>,
+    <%= @states.first.state_name %>,
+    <%= @countries.first.country_name %>
+  <% end %></h2>
+<ul id="contact_options">
+    <li><a href="mailto:{{email}}">E-mail</a></li>
+</ul>
+<p><%= @judge.biography %></p>
+<h3>Recent Decisions</h3>
+<% if @decisions.present? %>
+  <table class="detail-table judge-decision-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Decision</th>
+            <th>Date</th>
+            <th>Decision Source</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @decisions.each do |decision| %>
+        <tr>
+            <td><%= decision.decision_title%></td>
+            <td><%= decision.decision_position%></td>
+            <td><%= decision.decision_date%></td>
+            <td><% if decision.decision_source_URL.present?%><a href="<%= decision.decision_source_URL %>">Source</a><% else %>N/A<% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
