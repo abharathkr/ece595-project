@@ -2,26 +2,52 @@
   <% if voter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
-
-      <ul>
-      <% voter.errors.full_messages.each do |message| %>
+      <ul><% voter.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :session_id %>
-    <%= f.text_field :session_id %>
+  <!-- Custom -->
+  <div class="match-q-a">
+      <h1>Enter your ZIP Code</h1>
+    <%= f.label nil, "ZIP Code" %>
+    <%= f.text_field :zip_id, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
   </div>
 
-  <div class="field">
-    <%= f.label :zip_id %>
-    <%= f.text_field :zip_id %>
-  </div>
+  <% @toggle = 0 %>
+  <!-- Begin Question -->
+  <% @questions.each do |question| %>
+      <% if @toggle == 0 %>
+        <div class="match-q-b">
+      <% else %>
+        <div class="match-q-a">
+      <% end %>
+          <h1><%= question.id %>) <%= question.question %></h1>
+          <% if question.question_desc.present? %>
+            <p class="question_desc"><%= question.question_desc %></p>
+          <% end %>
+          <div class="match-choices">
+                <% @choices.where(question_id: question.id).each do |choice| %>
+                  <span class="choice">
+                      <input id="<%= question.id %>-<%= choice.id %>" type="radio" name="q<%= question.id %>" value="<%= question.id %>-<%= choice.id %>"/>
+                      <label for="<%= question.id %>-<%= choice.id %>"><%= choice.choice %></label>
+                  </span>
+                <% end %>
+          </div>
+          <!-- Change Toggle -->
+          <% if @toggle == 0%>
+            <% @toggle = 1 %>
+          <% else %>
+            <% @toggle = 0 %>
+          <% end %>
+      </div>
+  <% end %>
+  <!-- End Question -->
 
   <div class="actions">
-    <%= f.submit %>
+    <input id="reset-match" type="reset" value="Reset Answers" />
+    <%= f.submit "Find Your Match" %>
   </div>
+  <!-- End Custom -->
 <% end %>

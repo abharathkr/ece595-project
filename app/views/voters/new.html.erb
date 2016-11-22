@@ -1,4 +1,8 @@
-<h1>New Voter</h1>
+<% session[:match_id] = Time.now.to_i + DateTime.now.to_i  %>
+<%= session[:match_id] %>
+<h1>Find <span class="underline">Your</span> Match</h1>
+<h3>Instructions</h3>
+<p>Here, we'll give you some of the most important issues as sourced by <a href="http://www.gallup.com/poll/1675/most-important-problem.aspx">Gallup Polling</a>. Enter your ZIP code, choose your stance, and see your matches on the next page. As noted below in the disclaimer, no identifiable information will be linked with you, and any data storage is anonymous and purely for analytical purposes.</p>
 
 <%= render 'form', voter: @voter %>
 

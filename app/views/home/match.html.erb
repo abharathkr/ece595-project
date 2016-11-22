@@ -1,4 +1,4 @@
-<% session[:match_id] = Time.now.to_i %>
+<% session[:match_id] = Time.now.to_i + DateTime.now.to_i  %>
 <%= session[:match_id] %>
 <h1>Find <span class="underline">Your</span> Match</h1>
 <h3>Instructions</h3>
@@ -9,7 +9,7 @@
   <div class="match-q-a">
       <h1>Enter your ZIP Code</h1>
       <label for="zip">ZIP Code</label>
-      <input id="zip" name="voter[zip_id]" type="text" autofocus maxlength="5" autofocus placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+      <input id="zip" name="voter[zip_id]" type="text" autofocus maxlength="5" placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
   </div>
   <% @toggle = 0 %>
   <!-- Begin Question -->

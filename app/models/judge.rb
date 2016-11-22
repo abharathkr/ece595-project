@@ -1,4 +1,7 @@
 class Judge < ApplicationRecord
-  belongs_to :ballot
-  belongs_to :precinct
+  has_one :precinct
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
 end

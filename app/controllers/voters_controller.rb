@@ -15,6 +15,9 @@ class VotersController < ApplicationController
   # GET /voters/new
   def new
     @voter = Voter.new
+
+    @questions = Question.all
+    @choices = Choice.all
   end
 
   # GET /voters/1/edit
