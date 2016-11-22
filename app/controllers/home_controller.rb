@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   end
 
   def match_save
-    @voter = Voter.new
   end
 
   def match_results
