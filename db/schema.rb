@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121184826) do
+ActiveRecord::Schema.define(version: 20161122144749) do
 
   create_table "ballots", force: :cascade do |t|
     t.string   "election_year"
@@ -117,8 +117,9 @@ ActiveRecord::Schema.define(version: 20161121184826) do
     t.integer  "question_id"
     t.integer  "voter_id"
     t.integer  "candidate_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "choice_source_URL"
     t.index ["candidate_id"], name: "index_question_choices_on_candidate_id"
     t.index ["choice_id"], name: "index_question_choices_on_choice_id"
     t.index ["question_id"], name: "index_question_choices_on_question_id"
@@ -130,8 +131,9 @@ ActiveRecord::Schema.define(version: 20161121184826) do
     t.text     "question_desc"
     t.integer  "voter_id"
     t.integer  "candidate_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "question_topic"
     t.index ["candidate_id"], name: "index_questions_on_candidate_id"
     t.index ["voter_id"], name: "index_questions_on_voter_id"
   end

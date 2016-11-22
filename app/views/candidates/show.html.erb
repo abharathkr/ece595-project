@@ -12,29 +12,33 @@ Last Political Position: <% if @terms.present? %><%= @terms.first.position_title
 <% end %>
 </h2>
 <ul id="contact_options">
-    <li><a href="mailto:<%= @candidate.email %>">E-mail</a></li>
+    <li><a href="<%= @candidate.email %>">Contact</a></li>
     <li><a href="<%= @candidate.pol_URL %>">Website</a></li>
 </ul>
 <p><%= @candidate.biography %></p>
+<% if @stances.present? %>
 <h3>Positions</h3>
-<table class="detail-table candidate-stance-table">
-  <thead>
-      <tr>
-          <th>Topic</th>
-          <th>Stance</th>
-          <th>Stance Source</th>
-          <th>Details</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>{{referenda.title}}</td>
-          <td>{{stance.stance}}</td>
-          <td>{{stance.stance_source_URL}}</td>
-          <td><a href="{{this_will_link_to_referenda_or_issue}}">More&hellip;</a></td>
-      </tr>
-  </tbody>
-</table>
+  <table class="detail-table candidate-stance-table">
+    <thead>
+        <tr>
+            <th>Topic</th>
+            <th>Stance</th>
+            <th>Source</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @stances.each do |stance| %>
+          <% @topic = Question.where(id: stance.question_id) %>
+          <% @position = Choice.where(id: stance.choice_id, question_id: stance.question_id) %>
+          <tr>
+              <td><%= @topic.first.question_topic %></td>
+              <td><%= @position.first.choice %></td>
+              <td><a href="<%= stance.choice_source_URL %>">Source</a></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+<% end %>
 <% if @terms.present? %>
   <h3>Past Terms</h3>
   <table class="detail-table past-terms-table">

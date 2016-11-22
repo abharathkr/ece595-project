@@ -18,6 +18,9 @@ class CandidatesController < ApplicationController
       @states = State.where(id: @counties.first.state_id)
       @countries = Country.where(id: @states.first.country_id)
     end
+    if QuestionChoice.where(candidate_id: @candidate.id)
+      @stances = QuestionChoice.where(candidate_id: @candidate.id)
+    end
   end
 
   # GET /candidates/new

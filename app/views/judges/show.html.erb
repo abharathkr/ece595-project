@@ -1,5 +1,5 @@
 <h1><%= @judge.first_name %> <%= @judge.last_name %></h1>
-<h2><% if @judge.isSitting %>Currently a Sitting Judge,<% end%> <%= @judge.pol_Aff %><br />
+<h2><% if @judge.isSitting %>Currently a Sitting Judge,<% end%> <% if @judge.pol_Aff.present? %><%= @judge.pol_Aff %><% end %><br />
   <% if @judge.precinct_id.present? %>
     Precinct: <%= @precincts.first.precinct_num %>,
     <%= @cities.first.city_name %>,
@@ -8,11 +8,11 @@
     <%= @countries.first.country_name %>
   <% end %></h2>
 <ul id="contact_options">
-    <li><a href="mailto:<%= @judge.email %>">E-mail</a></li>
+    <li><a href="<%= @judge.email %>">Contact</a></li>
 </ul>
 <p><%= @judge.biography %></p>
-<h3>Recent Decisions</h3>
 <% if @decisions.present? %>
+<h3>Recent Decisions</h3>
   <table class="detail-table judge-decision-table">
     <thead>
         <tr>

@@ -134,7 +134,7 @@ input[type=text] {
 .choice { white-space: nowrap; line-height: 200%; }
 .question_desc { font-size: .85em; background-color: #ECEFF1; padding: 5px !important; color: #546E7A; border-radius: 3px; border: 1px solid #546E7A; }
 
-#submit-match, #mail-results {
+#reset-match, #submit-match, #mail-results {
   -webkit-appearance: none;
   border: 2px solid #880E4F;
   background-color: #EC407A;
@@ -148,6 +148,7 @@ input[type=text] {
   cursor: pointer;
 }
 
+#reset-match { margin-top: 0px; border-color: #B71C1C; background-color: #D50000; }
 #mail-results { margin-top: 0px; border-color: #0D47A1; background-color: #2196F3; }
 
 /** Match Stuff **/
@@ -237,8 +238,7 @@ footer { font-size: .85em; margin-bottom: 20px; }
 
     .candidate-stance-table td:nth-of-type(1):before { content: "Topic"; }
 		.candidate-stance-table td:nth-of-type(2):before { content: "Stance"; }
-		.candidate-stance-table td:nth-of-type(3):before { content: "Stance Source"; }
-		.candidate-stance-table td:nth-of-type(4):before { content: "Details"; }
+		.candidate-stance-table td:nth-of-type(3):before { content: "Source"; }
 
     .past-terms-table td:nth-of-type(1):before { content: "Position Title"; }
 		.past-terms-table td:nth-of-type(2):before { content: "Term Start"; }

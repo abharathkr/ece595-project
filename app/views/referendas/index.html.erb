@@ -1,6 +1,7 @@
 <h1>Referendas</h1>
 <% if params[:type].present? %><h2><% if params[:type] == "bonds" || params[:type] == "issues" %><%= params[:type].humanize %><% end %></h2><% end %>
-<p>Displaying (<%= @referendas.size %>) Referenda(s)&hellip;</p>
+<p>Displaying (<%= @referendas.size %>)
+  <% if params[:type].present? %><% if params[:type] == "bonds" || params[:type] == "issues" %><%= params[:type].humanize %><% end %><% else %>Referenda(s)<% end %>&hellip;</p>
 <table class="detail-table issue-table">
     <thead>
         <tr>
@@ -15,7 +16,7 @@
         <tr>
             <td><%= referenda.referenda_title %></td>
             <td><%= referenda.referenda_desc %></td>
-            <td><%= referenda.referenda_type %></td>
+            <td><%= referenda.referenda_type.humanize %></td>
             <td><%= link_to 'More...', referenda %></td>
         </tr>
       <% end %>

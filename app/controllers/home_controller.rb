@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     @questions = Question.all
     @choices = Choice.all
   end
+
+  def match_save
+    @voter = Voter.new
+  end
 end

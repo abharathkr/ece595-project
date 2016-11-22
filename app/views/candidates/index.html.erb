@@ -1,28 +1,33 @@
 <h1>Candidates</h1>
 <p>Displaying (<%= @candidates.size %>) Candidate(s)&hellip;</p>
-<table class="detail-table candidate-table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Party</th>
-            <th>Encumbent</th>
-            <th>Candidacy</th>
-            <th>E-Mail</th>
-            <th>Website</th>
-            <th>Details</th>
-        </tr>
-    </thead>
-    <tbody>
-      <% @candidates.each do |candidate| %>
-        <tr>
-            <td><%= candidate.first_name %> <%= candidate.last_name %></td>
-            <td><%= candidate.pol_Aff %></td>
-            <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
-            <td><%= candidate.running_for %></td>
-            <td><% if candidate.email.present? %><a href="mailto:<%= candidate.email %>"><%= candidate.email %></a><% else %>N/A<% end%></td>
-            <td><% if candidate.pol_URL.present? %><a href="<%= candidate.pol_URL %>">Link</a><% else %>N/A<% end%></td>
-            <td><%= link_to 'More...', candidate %></td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
+<% if @candidates.where(office_type: "National").present? %>
+<h3>National Races</h3>
+  <table class="detail-table candidate-table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Party</th>
+              <th>Encumbent</th>
+              <th>Candidacy</th>
+              <th>E-Mail</th>
+              <th>Website</th>
+              <th>Details</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @candidates.each do |candidate| %>
+        <% if candidate.office_type == "National" %>
+          <tr>
+              <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+              <td><% if candidate.pol_Aff %><%= candidate.pol_Aff %><% else %>N/A<% end %></td>
+              <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
+              <td><%= candidate.running_for %></td>
+              <td><% if candidate.email.present? %><a href="<%= candidate.email %>">Contact</a><% else %>N/A<% end%></td>
+              <td><% if candidate.pol_URL.present? %><a href="<%= candidate.pol_URL %>">Link</a><% else %>N/A<% end%></td>
+              <td><%= link_to 'More...', candidate %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+  </table>
+<% end %>

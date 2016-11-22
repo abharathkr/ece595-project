@@ -1,34 +1,46 @@
+<% session[:match_id] = Time.now.to_i %>
+<%= session[:match_id] %>
 <h1>Find <span class="underline">Your</span> Match</h1>
 <h3>Instructions</h3>
-<p>Here, we'll give you the ten (10) most important issues as sourced by
+<p>Here, we'll give you some of the most important issues as sourced by
     <a href="http://www.gallup.com/poll/1675/most-important-problem.aspx">Gallup Polling</a>. Enter your ZIP code, choose your stance, and see your matches on the next page. As noted below in the disclaimer, no identifiable information will be linked with you, and any data storage is anonymous and purely for analytical purposes.</p>
 <!-- Begin Quiz -->
-<div class="match-q-a">
-    <h1>Enter your ZIP Code</h1>
-    <label for="zip">ZIP Code</label>
-    <input id="zip" type="text" maxlength="5" autofocus placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
-</div>
-<% @toggle = 0 %>
-<% @increment = 1 %>
-<% @questions.each do |question| %>
-<!-- Begin Question -->
-<div class="match-q-<% if @toggle == 0%>b<% else %>a<% end %>">
-      <h1><%= @increment %>) <%= question.question %></h1>
-      <% if question.question_desc.present? %><p class="question_desc"><%= question.question_desc %></p><% end %>
-      <div class="match-choices">
-            <% @increment_choice = 1 %>
-            <% @choices.where(question_id: question.id).each do |choice| %>
-              <span class="choice">
-                  <input id="q<%= @increment %>c<%= @increment_choice %>" type="radio" name="q<%= @increment %>" value="<%= @increment %>-<%= choice.id %>"/>
-                  <label for="q<%= @increment %>c<%= @increment_choice %>"><%= choice.choice %></label>
-              </span>
-              <% @increment_choice += 1 %>
-            <% end %>
+<form>
+  <div class="match-q-a">
+      <h1>Enter your ZIP Code</h1>
+      <label for="zip">ZIP Code</label>
+      <input id="zip" type="text" maxlength="5" autofocus placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+  </div>
+  <% @toggle = 0 %>
+  <!-- Begin Question -->
+  <% @questions.each do |question| %>
+      <% if @toggle == 0 %>
+        <div class="match-q-b">
+      <% else %>
+        <div class="match-q-a">
+      <% end %>
+          <h1><%= question.id %>) <%= question.question %></h1>
+          <% if question.question_desc.present? %>
+            <p class="question_desc"><%= question.question_desc %></p>
+          <% end %>
+          <div class="match-choices">
+                <% @choices.where(question_id: question.id).each do |choice| %>
+                  <span class="choice">
+                      <input id="q<%= question.id %>-c<%= choice.id %>" type="radio" name="q<%= question.id %>" value="q<%= question.id %>-c<%= choice.id %>"/>
+                      <label for="q<%= question.id %>-c<%= choice.id %>"><%= choice.choice %></label>
+                  </span>
+                <% end %>
+          </div>
+          <!-- Change Toggle -->
+          <% if @toggle == 0%>
+            <% @toggle = 1 %>
+          <% else %>
+            <% @toggle = 0 %>
+          <% end %>
       </div>
-      <% @increment += 1 %>
-      <% if @toggle == 0%><% @toggle = 1 %><% else %><% @toggle = 0 %><% end %>
-</div>
-<!-- End Question -->
-<% end %>
-<input id="submit-match" type="submit" value="Find Your Match" />
+  <% end %>
+  <!-- End Question -->
+  <input id="reset-match" type="reset" value="Reset Answers" />
+  <input id="submit-match" type="submit" value="Find Your Match" />
+</form>
 <!-- End Quiz -->

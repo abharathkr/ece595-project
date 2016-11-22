@@ -1,5 +1,5 @@
 <h1>Judges</h1>
-<p>Displaying (<%= @judges.size %>) Judical Candidate(s)&hellip;</p> 
+<p>Displaying (<%= @judges.size %>) Judical Candidate(s)&hellip;</p>
 <table class="detail-table judge-table">
     <thead>
         <tr>
@@ -15,10 +15,10 @@
       <% @judges.each do |judge| %>
         <tr>
             <td><%= judge.first_name %> <%= judge.last_name %></td>
-            <td><%= judge.pol_Aff %></td>
+            <td><% if judge.pol_Aff %><%= judge.pol_Aff %><% else %>N/A<% end %></td>
             <td><% if judge.isSitting%>Yes<% else %>No<% end %></td>
             <td><%=judge.precinct_id %></td>
-            <td><% if judge.email.present? %><a href="mailto:<%= judge.email %>"><%= judge.email %></a><% else %>N/A<% end%></td>
+            <td><% if judge.email.present? %><a href="<%= judge.email %>">Contact</a><% else %>N/A<% end%></td>
             <td><%= link_to 'More...', judge %></td>
         </tr>
       <% end %>
