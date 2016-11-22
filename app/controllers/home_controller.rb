@@ -11,4 +11,8 @@ class HomeController < ApplicationController
   def match_save
     @voter = Voter.new
   end
+
+  def match_results
+    @candidates = Candidate.all
+  end
 end

@@ -1,4 +1,4 @@
-<h1><%= @judge.first_name %> <%= @judge.last_name %></h1>
+<h1><%= @judge.first_name + " " + @judge.last_name %></h1>
 <h2><% if @judge.isSitting %>Currently a Sitting Judge,<% end%> <% if @judge.pol_Aff.present? %><%= @judge.pol_Aff %><% end %><br />
   <% if @judge.precinct_id.present? %>
     Precinct: <%= @precincts.first.precinct_num %>,

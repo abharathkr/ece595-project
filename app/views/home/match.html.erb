@@ -5,11 +5,11 @@
 <p>Here, we'll give you some of the most important issues as sourced by
     <a href="http://www.gallup.com/poll/1675/most-important-problem.aspx">Gallup Polling</a>. Enter your ZIP code, choose your stance, and see your matches on the next page. As noted below in the disclaimer, no identifiable information will be linked with you, and any data storage is anonymous and purely for analytical purposes.</p>
 <!-- Begin Quiz -->
-<form>
+<form >
   <div class="match-q-a">
       <h1>Enter your ZIP Code</h1>
       <label for="zip">ZIP Code</label>
-      <input id="zip" type="text" maxlength="5" autofocus placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+      <input id="zip" name="voter[zip_id]" type="text" autofocus maxlength="5" autofocus placeholder="12345" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
   </div>
   <% @toggle = 0 %>
   <!-- Begin Question -->
@@ -26,8 +26,8 @@
           <div class="match-choices">
                 <% @choices.where(question_id: question.id).each do |choice| %>
                   <span class="choice">
-                      <input id="q<%= question.id %>-c<%= choice.id %>" type="radio" name="q<%= question.id %>" value="q<%= question.id %>-c<%= choice.id %>"/>
-                      <label for="q<%= question.id %>-c<%= choice.id %>"><%= choice.choice %></label>
+                      <input id="<%= question.id %>-<%= choice.id %>" type="radio" name="q<%= question.id %>" value="<%= question.id %>-<%= choice.id %>"/>
+                      <label for="<%= question.id %>-<%= choice.id %>"><%= choice.choice %></label>
                   </span>
                 <% end %>
           </div>

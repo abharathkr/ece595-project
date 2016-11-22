@@ -1,4 +1,4 @@
-<h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
+<h1><%= @candidate.first_name + " " + @candidate.last_name %></h1>
 <h2>Candidacy: <%= @candidate.running_for %> (<%= @candidate.office_type %>)<br />
 Last Political Position: <% if @terms.present? %><%= @terms.first.position_title %><% else %>None<% end %>
 <% if @candidate.isEncumbent == true %>Encumbent,<% end %><br />

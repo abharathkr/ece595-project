@@ -14,7 +14,7 @@
     <tbody>
       <% @judges.each do |judge| %>
         <tr>
-            <td><%= judge.first_name %> <%= judge.last_name %></td>
+            <td><%= judge.first_name + " " + judge.last_name %></td>
             <td><% if judge.pol_Aff %><%= judge.pol_Aff %><% else %>N/A<% end %></td>
             <td><% if judge.isSitting%>Yes<% else %>No<% end %></td>
             <td><%=judge.precinct_id %></td>

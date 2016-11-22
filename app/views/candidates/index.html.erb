@@ -18,7 +18,7 @@
         <% @candidates.each do |candidate| %>
         <% if candidate.office_type == "National" %>
           <tr>
-              <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+              <td><%= candidate.first_name + " " + candidate.last_name %></td>
               <td><% if candidate.pol_Aff %><%= candidate.pol_Aff %><% else %>N/A<% end %></td>
               <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
               <td><%= candidate.running_for %></td>

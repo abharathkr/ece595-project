@@ -1,88 +1,48 @@
 <h1>
     <span class="underline">Your</span>
     Match Results</h1>
-<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code ({{voter.zip_id.zip_code}}). See how you match up with them.</p>
+<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code
+  <% if params[:voter][:zip_id].present? %> (<%= params[:voter][:zip_id] %>)<% end %>. See how you match up with them.</p>
 <hr/>
 <input id="mail-results" type="button" value="E-Mail Results"/>
 <hr/>
 <!-- BEGIN MATCH -->
-<div class="match">
-    <h2>You v. <a href="{{link_to_candidate}}">{{candidate.first_name}} {{candidate.last_name}}</a></h2>
-    <h3>Total Match</h3>
-    <p>Psuedocode:<br/>percent = 0; foreach (voter-choice and candidate-choice) { if(voter-choice === candidate-choice) percent++; }<br/>
-        percent = percent * 100;<br/>
-        Use percent in values for class below and percentage value.</p>
-    <div class="match-container">
-        <div class="match-percentage per-30">{{percent}}%</div>
-    </div>
-    <table class="detail-table match-table match-results-table">
-        <thead>
-            <tr>
-                <th>You (voter.id)</th>
-                <th>Match</th>
-                <th>Them (candidate.id)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES/NO<br/>
-                    if voter answer === candidate answer</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES/NO<br/>
-                    if voter answer === candidate answer</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-        </tbody>
-    </table>
-    [...]
-    <hr />
-</div>
-<!-- END -->
-<!-- BEGIN MATCH -->
-<div class="match">
-    <h2>You v. <a href="{{link_to_candidate}}">{{candidate.first_name}} {{candidate.last_name}}</a></h2>
-    <h3>Total Match</h3>
-    <div class="match-container">
-        <div class="match-percentage per-70">70%</div>
-    </div>
-    <table class="detail-table match-table match-results-table">
-        <thead>
-            <tr>
-                <th>You (voter.id)</th>
-                <th>Match</th>
-                <th>Them (candidate.id)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-        </tbody>
-    </table>
-    [...]
-    <hr />
-</div>
+<% @candidates.each do |candidate| %>
+  <% if QuestionChoice.where(candidate_id: candidate.id) %>
+  <% @stances = QuestionChoice.where(candidate_id: candidate.id) %>
+  <% end %>
+  <div class="match">
+      <h2>You v. <%= link_to candidate.first_name + " " + candidate.last_name, candidate %></h2>
+      <h3>Total Match</h3>
+      <div class="match-container">
+          <div class="match-percentage per-30">{{percent}}%</div>
+      </div>
+      <table class="detail-table match-table match-results-table">
+          <thead>
+              <tr>
+                  <th>You</th>
+                  <th>Match</th>
+                  <th><%= candidate.first_name + " " + candidate.last_name %></th>
+              </tr>
+          </thead>
+          <tbody>
+            <% @stances.each do |stance| %>
+            <% @topic = Question.where(id: stance.question_id) %>
+            <% @position = Choice.where(id: stance.choice_id, question_id: stance.question_id) %>
+              <tr>
+                  <td class="match-table-question" colspan="3"><%= @topic.first.question_topic %></td>
+              </tr>
+              <tr>
+                  <td>{{question_choices.choice}}</td>
+                  <td>YES/NO<br/>
+                      if voter answer === candidate answer</td>
+                  <td>{{question_choices.choice}}</td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+      [...]
+      <hr />
+  </div>
+<% end %>
 <!-- END -->
