@@ -3,7 +3,7 @@
 Last Political Position: <% if @terms.present? %><%= @terms.first.position_title %><% else %>None<% end %>
 <% if @candidate.isEncumbent == true %>Encumbent,<% end %><br />
 <%= @candidate.pol_Aff %><br />
-<% if @candidate.precinct_id.present? %>
+<% if @candidate.precinct_id.present? && Precinct.where(id: @candidate.precinct_id).present? %>
   Precinct: <%= @precincts.first.precinct_num %>,
   <%= @cities.first.city_name %>,
   <%= @counties.first.county_name %>,
@@ -12,8 +12,8 @@ Last Political Position: <% if @terms.present? %><%= @terms.first.position_title
 <% end %>
 </h2>
 <ul id="contact_options">
-    <li><a href="<%= @candidate.email %>">Contact</a></li>
-    <li><a href="<%= @candidate.pol_URL %>">Website</a></li>
+    <% if @candidate.email.present? %><li><a href="<%= @candidate.email %>">Contact</a></li><% end %>
+    <% if @candidate.pol_URL.present? %><li><a href="<%= @candidate.pol_URL %>">Website</a></li><% end %>
 </ul>
 <p><%= @candidate.biography %></p>
 <% if @stances.present? %>

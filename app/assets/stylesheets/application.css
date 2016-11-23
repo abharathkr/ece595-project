@@ -166,6 +166,10 @@ input[type=text] {
 
 #content .match h2 { font-size: 1.4em; margin-top: 10px; }
 
+.match-yes { color: #4CAF50; }
+.match-no { color: #D50000; }
+.match-na { color: #90A4AE; }
+
 .per-0  { width: 2%; }
 .per-10 { width: 10%; }
 .per-20 { width: 20%; }
@@ -269,8 +273,9 @@ footer { font-size: .85em; margin-bottom: 20px; }
 		.judge-table td:nth-of-type(2):before { content: "Party"; }
 		.judge-table td:nth-of-type(3):before { content: "Sitting"; }
 		.judge-table td:nth-of-type(4):before { content: "Precinct"; }
-		.judge-table td:nth-of-type(5):before { content: "E-Mail"; }
-		.judge-table td:nth-of-type(6):before { content: "Details"; }
+    .judge-table td:nth-of-type(5):before { content: "Running For"; }
+		.judge-table td:nth-of-type(6):before { content: "E-Mail"; }
+		.judge-table td:nth-of-type(7):before { content: "Details"; }
 
     .judge-decision-table td:nth-of-type(1):before { content: "Title"; }
 		.judge-decision-table td:nth-of-type(2):before { content: "Decision"; }

@@ -1,15 +1,17 @@
 <h1><%= @judge.first_name + " " + @judge.last_name %></h1>
 <h2><% if @judge.isSitting %>Currently a Sitting Judge,<% end%> <% if @judge.pol_Aff.present? %><%= @judge.pol_Aff %><% end %><br />
-  <% if @judge.precinct_id.present? %>
+  <% if @judge.precinct_id.present? && Precinct.where(id: @judge.precinct_id).present? %>
     Precinct: <%= @precincts.first.precinct_num %>,
     <%= @cities.first.city_name %>,
     <%= @counties.first.county_name %>,
     <%= @states.first.state_name %>,
     <%= @countries.first.country_name %>
   <% end %></h2>
-<ul id="contact_options">
-    <li><a href="<%= @judge.email %>">Contact</a></li>
-</ul>
+<% if @judge.email.present? %>
+  <ul id="contact_options">
+      <li><a href="<%= @judge.email %>">Contact</a></li>
+  </ul>
+<% end %>
 <p><%= @judge.biography %></p>
 <% if @decisions.present? %>
 <h3>Recent Decisions</h3>

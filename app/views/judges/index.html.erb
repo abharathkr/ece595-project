@@ -7,6 +7,7 @@
             <th>Party</th>
             <th>Sitting</th>
             <th>Precinct</th>
+            <th>Running For</th>
             <th>E-Mail</th>
             <th>Details</th>
         </tr>
@@ -17,7 +18,8 @@
             <td><%= judge.first_name + " " + judge.last_name %></td>
             <td><% if judge.pol_Aff %><%= judge.pol_Aff %><% else %>N/A<% end %></td>
             <td><% if judge.isSitting%>Yes<% else %>No<% end %></td>
-            <td><%=judge.precinct_id %></td>
+            <td><% if judge.precinct_id.present? %><%=judge.precinct_id %><% else %>N/A<% end %></td>
+            <td><% if judge.running_for.present? %><%=judge.running_for %><% else %>N/A<% end %></td>
             <td><% if judge.email.present? %><a href="<%= judge.email %>">Contact</a><% else %>N/A<% end%></td>
             <td><%= link_to 'More...', judge %></td>
         </tr>
