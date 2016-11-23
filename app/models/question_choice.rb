@@ -1,5 +1,4 @@
 class QuestionChoice < ApplicationRecord
-
   belongs_to :choice
   belongs_to :question
   belongs_to :voter, optional: true
