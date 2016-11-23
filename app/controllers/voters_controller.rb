@@ -15,10 +15,6 @@ class VotersController < ApplicationController
   # GET /voters/new
   def new
     @voter = Voter.new
-    @voter.question_choices.build
-
-    @questions = Question.all
-    @choices = Choice.all
   end
 
   # GET /voters/1/edit
@@ -73,6 +69,6 @@ class VotersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def voter_params
-      params.require(:voter).permit(:session_id, :zip_id, question_choices_attributes: [:choice_id, :question_id, :voter_id])
+      params.require(:voter).permit(:session_id, :zip_id)
     end
 end

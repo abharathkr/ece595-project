@@ -2,7 +2,6 @@
   <% if question_choice.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(question_choice.errors.count, "error") %> prohibited this question_choice from being saved:</h2>
-
       <ul>
       <% question_choice.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,28 +9,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :choice_id %>
-    <%= f.text_field :choice_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :question_id %>
-    <%= f.text_field :question_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :voter_id %>
-    <%= f.text_field :voter_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :candidate_id %>
-    <%= f.text_field :candidate_id %>
-  </div>
-
+  <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
+  <% @cur_voter = @cur_voter.first.id.to_i %>
+  <%= f.hidden_field :voter_id, :value => @cur_voter %>
+  <% @questions.each do |question| %>
+      <% if @toggle == 0 %>
+        <div class="match-q-b">
+      <% else %>
+        <div class="match-q-a">
+      <% end %>
+          <h1><%= question.id %>) <%= question.question %></h1>
+          <% if question.question_desc.present? %>
+            <p class="question_desc"><%= question.question_desc %></p>
+          <% end %>
+          <div class="match-choices">
+                  <% @choices.where(question_id: question.id).each do |choice| %>
+                    <span class="choice">
+                      <%= radio_button_tag('user_choice[' + question.id.to_s + ']', choice.id) %>
+                      <%= label_tag('user_choice_' + question.id.to_s + "_" + choice.id.to_s, choice.choice) %>
+                    </span>
+                <% end %>
+          </div>
+          <!-- Change Toggle -->
+          <% if @toggle == 0%>
+            <% @toggle = 1 %>
+          <% else %>
+            <% @toggle = 0 %>
+          <% end %>
+      </div>
+  <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Find Your Match" %>
   </div>
 <% end %>

@@ -15,6 +15,8 @@ class QuestionChoicesController < ApplicationController
   # GET /question_choices/new
   def new
     @question_choice = QuestionChoice.new
+    @questions = Question.all
+    @choices = Choice.all
   end
 
   # GET /question_choices/1/edit
@@ -25,10 +27,20 @@ class QuestionChoicesController < ApplicationController
   # POST /question_choices.json
   def create
     @question_choice = QuestionChoice.new(question_choice_params)
+    @questions = Question.all
+    @choices = Choice.all
+
+    if params[:user_choice].nil? || params[:user_choice].count < @questions.length
+      @question_choice.errors.add(:base, "No")
+    else
+      params[:user_choice].each_pair do |q, c|
+      @question_choice = QuestionChoice.create(voter_id: params[:question_choice][:voter_id], question_id: q, choice_id: c)
+      end
+    end
 
     respond_to do |format|
       if @question_choice.save
-        format.html { redirect_to @question_choice, notice: 'Question choice was successfully created.' }
+        format.html { redirect_to match_results_url, notice: 'Question choice was successfully created.' }
         format.json { render :show, status: :created, location: @question_choice }
       else
         format.html { render :new }
@@ -69,6 +81,6 @@ class QuestionChoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_choice_params
-      params.require(:question_choice).permit(:choice_id, :question_id, :voter_id, :candidate_id)
+      params.require(:question_choice).permit(:voter_id, user_choice: [])
     end
 end
