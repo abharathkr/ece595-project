@@ -1,13 +1,11 @@
 <%= form_for(question_choice) do |f| %>
   <% if question_choice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question_choice.errors.count, "error") %> prohibited this question_choice from being saved:</h2>
-      <ul>
-      <% question_choice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <div id="error_explanation">
+    <h2>An error prohibited these questions from being saved:</h2>
+    <ul>
+        <li>You must answer <span class="underline">all</span> the questions</li>
+    </ul>
+  </div>
   <% end %>
   <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
   <% @cur_voter = @cur_voter.first.id.to_i %>
