@@ -54,11 +54,11 @@ grisham.office_type = "National"
 grisham.save
 
 #Hillary Terms
-Term.create(position_title: "First Lady of Arkansas", termStart: Date.parse("1979-1-9"), termEnd: Date.parse("1981-1-19"), candidate_id: '1')
-Term.create(position_title: "First Lady of Arkansas", termStart: Date.parse("1983-1-11"), termEnd: Date.parse("1992-12-12"), candidate_id: '1')
-Term.create(position_title: "First Lady of the United States", termStart: Date.parse("1993-1-20"), termEnd: Date.parse("2001-1-20"), candidate_id: '1')
-Term.create(position_title: "United States Senator (NY)", termStart: Date.parse("2001-1-3"), termEnd: Date.parse("2009-1-21"), candidate_id: '1')
-Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-21"), termEnd: Date.parse("2013-2-1"), candidate_id: '1')
+Term.create(position_title: "First Lady of Arkansas", termStart: Date.parse("1979-1-9"), termEnd: Date.parse("1981-1-19"), candidate_id: 1)
+Term.create(position_title: "First Lady of Arkansas", termStart: Date.parse("1983-1-11"), termEnd: Date.parse("1992-12-12"), candidate_id: 1)
+Term.create(position_title: "First Lady of the United States", termStart: Date.parse("1993-1-20"), termEnd: Date.parse("2001-1-20"), candidate_id: 1)
+Term.create(position_title: "United States Senator (NY)", termStart: Date.parse("2001-1-3"), termEnd: Date.parse("2009-1-21"), candidate_id: 1)
+Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-21"), termEnd: Date.parse("2013-2-1"), candidate_id: 1)
 
 #Trump Terms
 
@@ -74,7 +74,7 @@ Judge.create(first_name: "Debra", last_name: "Ramirez", running_for: "District C
 Judge.create(first_name: "Chris", last_name: "Schultz", running_for: "Justice of Court of Appeals", isSitting: true, biography: "Chris J. Schultz is a Sandia High School graduate, received a Bachelor of Arts degree from Baylor University, and a Juris Doctorate from the University of New Mexico School of Law in Albuquerque, New Mexico.", email: "http://www.keepjudgeschultz.com/contact.html")
 Judge.create(first_name: "Christine", last_name: "Rodriguez", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Vargas has worked as a litigator for Hunt & Davis P.C. for over twenty years. Her primary areas of focus are in personal injury and commercial law", email: "mailto:rodriguez4metrocourt@gmail.com")
 Judge.create(first_name: "Renee", last_name: "Torres", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Renée Torres – native New Mexican, life-long Democrat and Chief Judge of the Zia Tribal Court – is running for Metropolitan Court Judge in Bernalillo County. She is running for Division 3 and will be on the June 7, Democratic Primary Election ballot. She will bring experience, fairness and integrity to the bench.", email: "http://www.electreneetorres.com/contact.html")
-Decision.create(decision_title: "Man v. The World", decision_desc: "Man blames the world for his problems.", decision_position: "Found in favor of the World.", decision_date: Date.parse("2015-02-12"), judge_id: "1")
+Decision.create(decision_title: "Man v. The World", decision_desc: "Man blames the world for his problems.", decision_position: "Found in favor of the World.", decision_date: Date.parse("2015-02-12"), judge_id: '1')
 
 #Issues
 Referenda.create(referenda_title: "Bond C", referenda_desc: "Stuff", referenda_type: "bonds")
@@ -86,8 +86,8 @@ Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')
 Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "1", question_id: "1", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
-QuestionChoice.create(choice_id: "2", question_id: "1", candidate_id: "2", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
+QuestionChoice.create(choice_id: 1, question_id: 1, candidate_id: 1, choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
+QuestionChoice.create(choice_id: 2, question_id: 1, candidate_id: 2, choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
 
 Question.create(question_topic: "NAFTA & TPP", question: "Where do you stand on trade agreements?", question_desc: "The goal of the North American Free Trade Agreement (NAFTA) was to eliminate barriers to trade and investment between the U.S., Canada and Mexico. The goal of the Trans-Pacific Partnership (TPP) is to promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; raise living standards; reduce poverty in the signatories' countries; and promote transparency, good governance, and enhanced labor and environmental protections.") #2
 Choice.create(choice: "For NAFTA & TPP", question_id: '2')
