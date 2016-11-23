@@ -1,11 +1,21 @@
-<% session[:match_id] = Time.now.to_i + DateTime.now.to_i  %>
-<%= @cur_user = session[:session_id] %>
-<h1>Find <span class="underline">Your</span> Match</h1>
-<h3>Instructions</h3>
-<p>Here, we'll give you some of the most important issues as sourced by
-    <a href="http://www.gallup.com/poll/1675/most-important-problem.aspx">Gallup Polling</a>. Enter your ZIP code, choose your stance, and see your matches on the next page. As noted below in the disclaimer, no identifiable information will be linked with you, and any data storage is anonymous and purely for analytical purposes.</p>
-<!-- Begin Quiz -->
-<form>
+<%= form_for(voter) do |f| %>
+  <% if voter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(voter.errors.count, "error") %> prohibited this voter from being saved:</h2>
+      <ul><% voter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- Custom -->
+  <div class="match-q-a">
+      <h1>Enter your ZIP Code</h1>
+    <%= f.label nil, "ZIP Code" %>
+    <%= f.text_field :zip_id, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
+  </div>
+
+  <% @toggle = 0 %>
   <!-- Begin Question -->
   <% @questions.each do |question| %>
       <% if @toggle == 0 %>
@@ -34,7 +44,10 @@
       </div>
   <% end %>
   <!-- End Question -->
-  <input id="reset-match" type="reset" value="Reset Answers" />
-  <input id="submit-match" type="submit" value="Find Your Match" />
-</form>
-<!-- End Quiz -->
+
+  <div class="actions">
+    <input id="reset-match" type="reset" value="Reset Answers" />
+    <%= f.submit "Find Your Match" %>
+  </div>
+  <!-- End Custom -->
+<% end %>

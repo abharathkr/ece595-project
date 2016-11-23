@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :terms
   resources :candidates
   get 'match_results', to: 'home#match_results', as: 'match_results'
-  #post 'match_save', to: "home#match_save", as: :match_save
+  get 'match_start', to: 'voters#new', as: 'match_start'
   get 'match', to: 'home#match', as: 'match'
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

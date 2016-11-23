@@ -12,42 +12,12 @@
   <div class="match-q-a">
       <h1>Enter your ZIP Code</h1>
     <%= f.label nil, "ZIP Code" %>
+    <%= f.hidden_field :session_id, :value => session[:session_id] %>
     <%= f.text_field :zip_id, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
   </div>
-
-  <% @toggle = 0 %>
-  <!-- Begin Question -->
-  <% @questions.each do |question| %>
-      <% if @toggle == 0 %>
-        <div class="match-q-b">
-      <% else %>
-        <div class="match-q-a">
-      <% end %>
-          <h1><%= question.id %>) <%= question.question %></h1>
-          <% if question.question_desc.present? %>
-            <p class="question_desc"><%= question.question_desc %></p>
-          <% end %>
-          <div class="match-choices">
-                <% @choices.where(question_id: question.id).each do |choice| %>
-                  <span class="choice">
-                      <input id="<%= question.id %>-<%= choice.id %>" type="radio" name="q<%= question.id %>" value="<%= question.id %>-<%= choice.id %>"/>
-                      <label for="<%= question.id %>-<%= choice.id %>"><%= choice.choice %></label>
-                  </span>
-                <% end %>
-          </div>
-          <!-- Change Toggle -->
-          <% if @toggle == 0%>
-            <% @toggle = 1 %>
-          <% else %>
-            <% @toggle = 0 %>
-          <% end %>
-      </div>
-  <% end %>
-  <!-- End Question -->
-
   <div class="actions">
-    <input id="reset-match" type="reset" value="Reset Answers" />
-    <%= f.submit "Find Your Match" %>
+    <!--<input id="reset-match" type="reset" value="Reset Answers" />-->
+    <%= f.submit "Continue" %>
   </div>
   <!-- End Custom -->
 <% end %>

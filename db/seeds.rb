@@ -109,7 +109,7 @@ Choice.create(choice: "Lower taxes.", question_id: '10')
 Choice.create(choice: "Raise taxes.", question_id: '10')
 
 #Precinct test
-Zip.create(zip_code: '87131', precinct_id: '1')
+Zip.create(zip_code: '87102', precinct_id: '1')
 Precinct.create(precinct_num: '1', precinct_type: "National", city_id: '1')
 City.create(city_name: "Albuquerque", county_id: '1')
 County.create(county_name: "Bernalilo", state_id: '1')

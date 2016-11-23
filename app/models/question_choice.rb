@@ -8,6 +8,4 @@ class QuestionChoice < ApplicationRecord
   validates :choice_id, presence: true
   validates :question_id, presence: true
 
-  accepts_nested_attributes_for :question, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
-  accepts_nested_attributes_for :choices, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 end

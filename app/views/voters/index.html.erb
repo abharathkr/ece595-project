@@ -15,7 +15,7 @@
     <% @voters.each do |voter| %>
       <tr>
         <td><%= voter.session_id %></td>
-        <td><%= voter.zip %></td>
+        <td><%= voter.zip_id %></td>
         <td><%= link_to 'Show', voter %></td>
         <td><%= link_to 'Edit', edit_voter_path(voter) %></td>
         <td><%= link_to 'Destroy', voter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

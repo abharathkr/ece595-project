@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   end
 
   def match_save
+    @voters = Voter.create('2222333','87102')
   end
 
   def match_results

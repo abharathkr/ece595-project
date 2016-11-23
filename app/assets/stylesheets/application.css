@@ -182,6 +182,17 @@ hr {
     margin-bottom: 15px;
 }
 
+#error_explanation {
+    width:90%;
+    margin: 10px;
+    margin: 10px auto;
+    background: #EF5350;
+    border-radius:3px;
+    color: white;
+}
+
+#error_explanation h2 { margin-left:20px; }
+#error_explanation ul { margin-left: 50px; text-align: left; padding-bottom: 20px; font-size:.9em; }
 /** Footer **/
 footer { font-size: .85em; margin-bottom: 20px; }
 

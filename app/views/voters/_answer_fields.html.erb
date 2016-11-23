@@ -1,0 +1,6 @@
+<% @choices.where(question_id: question.id).each do |choice| %>
+  <span class="choice">
+    <%= radio_button_tag(:choice_id, choice.id) %>
+    <%= label_tag("choice_id_" + choice.id.to_s, choice.choice) %>
+  </span>
+<% end %>

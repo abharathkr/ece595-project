@@ -15,6 +15,7 @@ class VotersController < ApplicationController
   # GET /voters/new
   def new
     @voter = Voter.new
+    @voter.question_choices.build
 
     @questions = Question.all
     @choices = Choice.all
@@ -31,7 +32,7 @@ class VotersController < ApplicationController
 
     respond_to do |format|
       if @voter.save
-        format.html { redirect_to @voter, notice: 'Voter was successfully created.' }
+        format.html { redirect_to match_path }
         format.json { render :show, status: :created, location: @voter }
       else
         format.html { render :new }
@@ -72,6 +73,6 @@ class VotersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def voter_params
-      params.require(:voter).permit(:session_id, :zip_id)
+      params.require(:voter).permit(:session_id, :zip_id, question_choices_attributes: [:choice_id, :question_id, :voter_id])
     end
 end
