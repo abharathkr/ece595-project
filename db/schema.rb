@@ -181,10 +181,9 @@ ActiveRecord::Schema.define(version: 20161123205631) do
 
   create_table "voters", force: :cascade do |t|
     t.string   "session_id"
-    t.integer  "zip_id"
+    t.string   "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["zip_id"], name: "index_voters_on_zip_id", using: :btree
   end
 
   create_table "zips", force: :cascade do |t|
@@ -215,6 +214,5 @@ ActiveRecord::Schema.define(version: 20161123205631) do
   add_foreign_key "stances", "voters"
   add_foreign_key "states", "countries"
   add_foreign_key "terms", "candidates"
-  add_foreign_key "voters", "zips"
   add_foreign_key "zips", "precincts"
 end

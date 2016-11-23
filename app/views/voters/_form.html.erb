@@ -12,7 +12,7 @@
       <h1>Enter your ZIP Code</h1>
     <%= f.label nil, "ZIP Code" %>
     <%= f.hidden_field :session_id, :value => session[:session_id] %>
-    <%= f.text_field :zip_id, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
+    <%= f.text_field :zip_code, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
   </div>
   <div class="actions">
     <!--<input id="reset-match" type="reset" value="Reset Answers" />-->
