@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#Precinct test
+Country.create(country_name: "United States of America")
+State.create(state_name: "New Mexico", country_id: '1')
+County.create(county_name: "Bernalilo", state_id: '1')
+City.create(city_name: "Albuquerque", county_id: '1')
+Precinct.create(precinct_num: '1', precinct_type: "National", city_id: '1')
+Zip.create(zip_code: '87102', precinct_id: '1')
+
 #Candidates
 hillary = Candidate.new
 hillary.first_name = "Hillary"
@@ -155,11 +163,3 @@ Choice.create(choice: "Raise taxes on middle class.", question_id: '10')
 #Candidates' Answers
 QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
 QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
-
-#Precinct test
-Zip.create(zip_code: '87102', precinct_id: '1')
-Precinct.create(precinct_num: '1', precinct_type: "National", city_id: '1')
-City.create(city_name: "Albuquerque", county_id: '1')
-County.create(county_name: "Bernalilo", state_id: '1')
-State.create(state_name: "New Mexico", country_id: '1')
-Country.create(country_name: "United States of America")
