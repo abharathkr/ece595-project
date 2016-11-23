@@ -55,8 +55,17 @@ Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-
 #Trump Terms
 
 #Judge
-Judge.create(first_name:"Raul", last_name: "Torrez", running_for: "District Attorney", isSitting: false, biography: "Born and raised in Albuquerque, Raúl Torrez is a former federal prosecutor and senior adviser in President Obama’s Department of Justice. Working for nearly a decade as an Assistant United States Attorney, Assistant Attorney General and Assistant District Attorney, Raúl has worked at every level of the criminal justice system to protect our community and fight for justice.", email: "http://www.raultorrez.com/transition_contact", precinct_id: "1")
+Judge.create(first_name:"Raul", last_name: "Torrez", running_for: "District Attorney", isSitting: true, biography: "Born and raised in Albuquerque, Raúl Torrez is a former federal prosecutor and senior adviser in President Obama’s Department of Justice. Working for nearly a decade as an Assistant United States Attorney, Assistant Attorney General and Assistant District Attorney, Raúl has worked at every level of the criminal justice system to protect our community and fight for justice.", email: "http://www.raultorrez.com/transition_contact", precinct_id: "1")
 Judge.create(first_name:"Judith", last_name: "Nakamura", running_for: "State Supreme Court", isSitting: true, biography: "Judith Nakamura is a justice on the New Mexico Supreme Court. She was appointed to the court on November 12, 2015, by Governor Susana Martinez to fill the vacancy created by Justice Richard Bosson's retirement on October 30, 2015. New Mexico state law requires supreme court justices appointed by the governor to successfully run for a partisan election in the next election cycle in order to remain on the court.")
+Judge.create(first_name:"Michael", last_name: "Vigil", running_for: "State Supreme Court", isSitting: true, biography: "Michael E. Vigil is the chief judge of the New Mexico Court of Appeals. He was appointed to the court by Democratic Governor Bill Richardson and was sworn in on March 7, 2003. He was elected in 2004 and re-elected in 2012 to a term set to end in 2020. Vigil was elected by his peers to a two-year term as chief judge on January 20, 2015.")
+Judge.create(first_name: "Stephen", last_name: "French", running_for: "Justice of Court of Appeals", isSitting: true, biography: "Stephen French is a judge on the New Mexico Court of Appeals. He was appointed by Governor Susana Martinez in February 2016 and sworn in on Friday, February 19")
+Judge.create(first_name: "Julie", last_name: "Vargas", running_for: "Justice of Court of Appeals", isSitting: false, biography: "Vargas has worked as a litigator for Hunt & Davis P.C. for over twenty years. Her primary areas of focus are in personal injury and commercial law")
+Judge.create(first_name: "David", last_name: "Williams", running_for: "District Court", isSitting: true, biography: " Judge David Williams joined the Second Judicial District Court in 2016 after serving as an Assistant U.S. Attorney in the Office of the U.S. Attorney for New Mexico from 1977 to 1981 and from 1985 to 2016. From 1975 to 1977, he was an Assistant District Attorney in Bernalillo County. Judge Williams holds Bachelor of Arts and Juris Doctorate degrees from the University of New Mexico.")
+Judge.create(first_name: "Cindy", last_name: "Leos", running_for: "District Court", isSitting: false, biography: "Cindy grew up in Albuquerque, New Mexico and graduated from Moriarty High School in 1992.  She obtained her undergraduate degree from University of Colorado in Boulder in Sociology in 1997.  She moved back to Albuquerque and worked as a social worker for several years before going to law school in Chicago, Illinois.  After graduating law school, she took and passed the Illinois Bar and then took and passed the New Mexico Bar.  After practicing civil defense for three years in Chicago, Cindy moved back to New Mexico where she worked as a Children's Court Attorney for Child Protective Services, representing the State of New Mexico in child abuse and neglect cases.  She also worked with the New Mexico Public Defender Department in the felony division for four and half years. During her time with the New Mexico Public Defender, Cindy was a supervisor, trainer and an adjunct professor for UNM Law School Students.  Most recently, she has been running her own private practice in downtown Albuquerque.", email: "http://www.cindyleosforjudge.com/contact")
+Judge.create(first_name: "Debra", last_name: "Ramirez", running_for: "District Court", isSitting: true, biography: " Judge Ramirez joined the Court in 2014 as the Domestic Violence Judge. Prior to that, she served the Second Judicial District Court as the Domestic Violence Special Commissioner from 2001-2003 returning in 2009, serving until her appointment to the bench in 2014. She serves as the Chair of the New Mexico Supreme Court's Domestic Relations Rules Committee and is a member of the New Mexico Intimate Partner Homicide Review Team.")
+Judge.create(first_name: "Chris", last_name: "Schultz", running_for: "Justice of Court of Appeals", isSitting: true, biography: "Chris J. Schultz is a Sandia High School graduate, received a Bachelor of Arts degree from Baylor University, and a Juris Doctorate from the University of New Mexico School of Law in Albuquerque, New Mexico.", email: "http://www.keepjudgeschultz.com/contact.html")
+Judge.create(first_name: "Christine", last_name: "Rodriguez", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Vargas has worked as a litigator for Hunt & Davis P.C. for over twenty years. Her primary areas of focus are in personal injury and commercial law", email: "mailto:rodriguez4metrocourt@gmail.com")
+Judge.create(first_name: "Renee", last_name: "Torres", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Renée Torres – native New Mexican, life-long Democrat and Chief Judge of the Zia Tribal Court – is running for Metropolitan Court Judge in Bernalillo County. She is running for Division 3 and will be on the June 7, Democratic Primary Election ballot. She will bring experience, fairness and integrity to the bench.", email: "http://www.electreneetorres.com/contact.html")
 Decision.create(decision_title: "Man v. The World", decision_desc: "Man blames the world for his problems.", decision_position: "Found in favor of the World.", decision_date: Date.parse("2015-02-12"), judge_id: "1")
 
 #Issues
@@ -67,6 +76,8 @@ Referenda.create(referenda_title: "Bond D", referenda_desc: "Stuff", referenda_t
 Question.create(question_topic: "Federal Minimum Wage", question: "Do you support raising the federal or state minimum wage?", question_desc: "The federal minimum wage for covered nonexempt employees is $7.25 per hour effective July 24, 2009. The federal minimum wage provisions are contained in the Fair Labor Standards Act (FLSA). Many states also have minimum wage laws.") #1
 Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')
 Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
+
+#Candidates' Answers
 QuestionChoice.create(choice_id: "1", question_id: "1", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
 QuestionChoice.create(choice_id: "2", question_id: "1", candidate_id: "2", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
 
@@ -75,40 +86,75 @@ Choice.create(choice: "For NAFTA & TPP", question_id: '2')
 Choice.create(choice: "Against NAFTA & TPP", question_id: '2')
 Choice.create(choice: "For NAFTA, Against TPP", question_id: '2')
 Choice.create(choice: "Against NAFTA, For TPP", question_id: '2')
+
+#Candidates' Answers
 QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "1", choice_source_URL: "http://www.pri.org/stories/2016-07-28/hillary-clinton-s-stand-nafta-and-tpp-it-s-complicated-and-evolving")
+QuestionChoice.create(choice_id: "4", question_id: "2", candidate_id: "2", choice_source_URL: "http://abcnews.go.com/Business/trump-trade-president-elect-tear-tpp-nix-nafta/story?id=43467294")
 
 Question.create(question_topic: "Sam-Sex Marriage", question: "What is your position on same-sex marriage?", question_desc: "Does not define marriage on the basis of gender. Allows the same protections as heterosexual marriages.") #3
 Choice.create(choice: "For Same-Sex Marriage", question_id: '3')
 Choice.create(choice: "Against Same-Sex Marriage", question_id: '3')
 
+#Candidates' Answers
+QuestionChoice.create(choice_id: "7", question_id: "3", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2015/jun/17/hillary-clinton/hillary-clinton-change-position-same-sex-marriage/")
+QuestionChoice.create(choice_id: "8", question_id: "3", candidate_id: "2", choice_source_URL: "http://www.hrc.org/2016RepublicanFacts/donald-trump-opposes-nationwide-marriage-equality")
+
 Question.create(question_topic: "Gun Control", question: "What is your position on gun control?", question_desc: "Gun control (or firearms regulation) is the set of laws or policies that regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.") #4
 Choice.create(choice: "More gun laws should be enacted.", question_id: '4')
 Choice.create(choice: "Less gun laws should be enacted.", question_id: '4')
 
+#Candidates' Answers
+QuestionChoice.create(choice_id: "9", question_id: "4", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/gun-violence-prevention/")
+QuestionChoice.create(choice_id: "10", question_id: "4", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/constitution-and-second-amendment")
+
 Question.create(question_topic: "Abortion", question: "What is your position on abortion?", question_desc: "The deliberate termination of a pregnancy.") #5
 Choice.create(choice: "Should be legal.", question_id: '5')
 Choice.create(choice: "Should be illegal.", question_id: '5')
+
+#Candidates' Answers
+QuestionChoice.create(choice_id: "11", question_id: "5", candidate_id: "1", choice_source_URL: "http://www.ontheissues.org/2016/Hillary_Clinton_Abortion.htm")
+QuestionChoice.create(choice_id: "12", question_id: "5", candidate_id: "2", choice_source_URL: "http://www.ontheissues.org/2016/Donald_Trump_Abortion.htm")
 
 Question.create(question_topic: "Obamacare", question: "What is your position on Obamacare?", question_desc: "The Patient Protection and Affordable Care Act (PPACA), commonly called the Affordable Care Act (ACA) or Obamacare, is a United States federal statute enacted by President Barack Obama on March 23, 2010.") #6
 Choice.create(choice: "Should be kept.", question_id: '6')
 Choice.create(choice: "Should be abolished.", question_id: '6')
 Choice.create(choice: "Should be kept, but altered.", question_id: '6')
 
+#Candidates' Answers
+QuestionChoice.create(choice_id: "13", question_id: "6", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
+QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
+
 Question.create(question_topic: "Foreign Involvement", question: "Where do you stand on the United States' involvement in foreign affairs?") #7
 Choice.create(choice: "Focus on our country, less on foreign affairs.", question_id: '7')
 Choice.create(choice: "Aid in issues abroad.", question_id: '7')
+
+#Candidates' Answers
+QuestionChoice.create(choice_id: "17", question_id: "7", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
+QuestionChoice.create(choice_id: "16", question_id: "7", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
 
 Question.create(question_topic: "Immigration", question: "Where do you stand on immigration?", question_desc: "The United States Department of Homeland Security (DHS) has estimated that 11.4 million unauthorized immigrants lived in the United States in January 2012.") #8
 Choice.create(choice: "Undocumented immigrants should be deported.", question_id: '8')
 Choice.create(choice: "Undocumented immigrants should be given a path to citizenship.", question_id: '8')
 
+#Candidates' Answers
+QuestionChoice.create(choice_id: "19", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
+QuestionChoice.create(choice_id: "18", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
+
 Question.create(question_topic: "Fracking", question: "What is your opinion on fracking?", question_desc: "Fracking is the process of injecting liquid at high pressure into subterranean rocks, boreholes, etc., so as to force open existing fissures and extract oil or gas.") #9
 Choice.create(choice: "Fracking should be allowed.", question_id: '9')
 Choice.create(choice: "Fracking is dangerous, should be halted.", question_id: '9')
 
-Question.create(question_topic: "Taxes", question: "What would you like done in regards to taxes?") #10
-Choice.create(choice: "Lower taxes.", question_id: '10')
-Choice.create(choice: "Raise taxes.", question_id: '10')
+#Candidates' Answers
+QuestionChoice.create(choice_id: "20", question_id: "9", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/apr/13/bernie-s/does-hillary-clinton-support-fracking/")
+QuestionChoice.create(choice_id: "20", question_id: "9", candidate_id: "2", choice_source_URL: "http://thehill.com/policy/energy-environment/290186-trump-rattles-industry-with-fracking-position")
+
+Question.create(question_topic: "Taxes", question: "What would you like done in regards to taxes on the middle class?") #10
+Choice.create(choice: "Lower taxes on middle class.", question_id: '10')
+Choice.create(choice: "Raise taxes on middle class.", question_id: '10')
+
+#Candidates' Answers
+QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
+QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
 
 #Precinct test
 Zip.create(zip_code: '87102', precinct_id: '1')
