@@ -47,7 +47,7 @@ grisham.isEncumbent = true
 grisham.biography = "Michelle Lujan Grisham (born October 24, 1959) is an American lawyer and politician who is the U.S. Representative for New Mexico's 1st congressional district, serving since 2013. She has served in the New Mexico state cabinet, and as Bernalillo County Commissioner."
 grisham.email = "https://lujangrisham.house.gov/contact"
 grisham.pol_URL = "https://lujangrisham.house.gov/"
-trump.pol_Aff = "Democrat"
+grisham.pol_Aff = "Democrat"
 grisham.hasPicture = false
 grisham.running_for = "Congress"
 grisham.office_type = "National"
@@ -86,8 +86,8 @@ Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')
 Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: 1, question_id: 1, candidate_id: 1, choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
-QuestionChoice.create(choice_id: 2, question_id: 1, candidate_id: 2, choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
+QuestionChoice.create(choice_id: '1', question_id: '1', candidate_id: '1', choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
+QuestionChoice.create(choice_id: '2', question_id: '1', candidate_id: '2', choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
 
 Question.create(question_topic: "NAFTA & TPP", question: "Where do you stand on trade agreements?", question_desc: "The goal of the North American Free Trade Agreement (NAFTA) was to eliminate barriers to trade and investment between the U.S., Canada and Mexico. The goal of the Trans-Pacific Partnership (TPP) is to promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; raise living standards; reduce poverty in the signatories' countries; and promote transparency, good governance, and enhanced labor and environmental protections.") #2
 Choice.create(choice: "For NAFTA & TPP", question_id: '2')
