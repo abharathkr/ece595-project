@@ -222,7 +222,7 @@ footer { font-size: .85em; margin-bottom: 20px; }
 @media
 	only screen and (max-width: 760px),
 	(min-device-width: 768px) and (max-device-width: 1024px)  {
-
+    .choice { white-space: normal; display: block; text-align: left; }
     #splash_logo { width: 256px; height: 112.5px; }
     #navigation ul li { height: 16px; font-size: .8em; }
     #navigation ul li a { height: 16px; padding-top: 1px; }
