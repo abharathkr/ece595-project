@@ -62,6 +62,9 @@ Term.create(position_title: "Secretary of State", termStart: Date.parse("2009-1-
 
 #Trump Terms
 
+#Grisham Terms
+Term.create(position_title: "U.S. House of Representatives (NM)", termStart: Date.parse("2013-1-3"), candidate_id: 3)
+
 #Judge
 Judge.create(first_name:"Raul", last_name: "Torrez", running_for: "District Attorney", isSitting: true, biography: "Born and raised in Albuquerque, Raúl Torrez is a former federal prosecutor and senior adviser in President Obama’s Department of Justice. Working for nearly a decade as an Assistant United States Attorney, Assistant Attorney General and Assistant District Attorney, Raúl has worked at every level of the criminal justice system to protect our community and fight for justice.", email: "http://www.raultorrez.com/transition_contact", precinct_id: "1")
 Judge.create(first_name:"Judith", last_name: "Nakamura", running_for: "State Supreme Court", isSitting: true, biography: "Judith Nakamura is a justice on the New Mexico Supreme Court. She was appointed to the court on November 12, 2015, by Governor Susana Martinez to fill the vacancy created by Justice Richard Bosson's retirement on October 30, 2015. New Mexico state law requires supreme court justices appointed by the governor to successfully run for a partisan election in the next election cycle in order to remain on the court.")
