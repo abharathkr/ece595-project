@@ -6,7 +6,7 @@
 <% if Zip.where(zip_code: @cur_zip).empty? %>
 <div id="error_explanation">
   <h2>No Candidates Found Matching ZIP Code</h2>
-  <p>We currently don't have any candidates matching the ZIP code (<%= @cur_zip %>) you've entered.
+  <p>We currently don't have any candidates matching the ZIP code you've entered (<%= @cur_zip %>).
     However, using the ZIP code you've provided, we'll be able to build our database
     based on demand. E-mail your results and you will be provided with a link to check back later
     to see if your local candidates have been posted.</p>
