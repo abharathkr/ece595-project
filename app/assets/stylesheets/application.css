@@ -206,7 +206,8 @@ hr {
     color: white;
 }
 
-#error_explanation h2 { margin-left:20px; }
+#error_explanation h2, #error_explanation p { margin-left:20px; margin-right: 20px; }
+#error_explanation p { font-size: .9em; text-align: justify; }
 #error_explanation ul { margin-left: 50px; text-align: left; padding-bottom: 20px; font-size:.9em; }
 /** Footer **/
 footer { font-size: .85em; margin-bottom: 20px; }

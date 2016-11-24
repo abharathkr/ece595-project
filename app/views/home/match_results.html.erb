@@ -1,10 +1,21 @@
+<% @cur_zip = nil %>
+<% @cur_zip = Voter.where(session_id: session[:session_id]) %>
+<% @cur_zip = @cur_zip.first.zip_code %>
 <h1><span class="underline">Your</span> Match Results</h1>
-<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code. See how you match up with them.</p>
-
+<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code (<%= @cur_zip %>). See how you match up with them.</p>
+<% if Zip.where(zip_code: @cur_zip).nil? %>
+<div id="error_explanation">
+  <h2>No Candidates Found Matching ZIP Code</h2>
+  <p>We currently don't have any candidates matching the ZIP code (<%= @cur_zip %>) you've entered.
+    However, using the ZIP code you've provided, we'll be able to build our database
+    based on demand. E-mail your results and you will be provided with a link to check back later
+    to see if your local candidates have been posted.</p>
+    <p>Displaying national race candidates below.</p>
+</div>
+<% end %>
 <hr/>
 <input id="mail-results" type="button" value="E-Mail Results"/>
-<hr/>
-
+<hr />
 <!-- Get Voter Stuff -->
 <% if Voter.where(session_id: session[:session_id]).present? %>
   <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
