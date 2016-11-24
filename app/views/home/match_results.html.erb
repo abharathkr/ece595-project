@@ -3,7 +3,7 @@
 <% @cur_zip = @cur_zip.first.zip_code %>
 <h1><span class="underline">Your</span> Match Results</h1>
 <p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code (<%= @cur_zip %>). See how you match up with them.</p>
-<% if Zip.where(zip_code: @cur_zip).nil? %>
+<% if Zip.where(zip_code: @cur_zip).empty? %>
 <div id="error_explanation">
   <h2>No Candidates Found Matching ZIP Code</h2>
   <p>We currently don't have any candidates matching the ZIP code (<%= @cur_zip %>) you've entered.
