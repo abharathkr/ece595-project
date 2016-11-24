@@ -1,6 +1,11 @@
 <% @cur_zip = nil %>
-<% @cur_zip = Voter.where(session_id: session[:session_id]) %>
-<% @cur_zip = @cur_zip.first.zip_code %>
+<% if params[:match_id].present? %>
+  <% @cur_zip = Voter.where(session_id: params[:match_id]) %>
+  <% @cur_zip = @cur_zip.first.zip_code %>
+<% else %>
+  <% @cur_zip = Voter.where(session_id: session[:session_id]) %>
+  <% @cur_zip = @cur_zip.first.zip_code %>
+<% end %>
 <h1><span class="underline">Your</span> Match Results</h1>
 <p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code (<%= @cur_zip %>). See how you match up with them.</p>
 <% if Zip.where(zip_code: @cur_zip).empty? %>
@@ -17,13 +22,25 @@
 <input id="mail-results" type="button" value="E-Mail Results"/>
 <hr />
 <!-- Get Voter Stuff -->
-<% if Voter.where(session_id: session[:session_id]).present? %>
-  <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
+<% if params[:match_id].present? %>
+<% if Voter.where(session_id: params[:match_id]).present? %>
+  <% @cur_voter = Voter.where(session_id: params[:match_id]) %>
   <% @cur_voter = @cur_voter.first.id %>
   <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
     <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
   <% else %>
-    <!-- REDIRECT TO MATCH -->
+    <script type="text/javascript">window.location.href="<%= match_start %>"</script>
+  <% end %>
+<% end %>
+<% else %>
+  <% if Voter.where(session_id: session[:session_id]).present? %>
+    <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
+    <% @cur_voter = @cur_voter.first.id %>
+    <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
+      <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
+    <% else %>
+      <script type="text/javascript">window.location.href="<%= match_start %>"</script>
+    <% end %>
   <% end %>
 <% end %>
 <!-- END Get Voter Stuff -->
