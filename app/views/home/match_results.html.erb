@@ -19,7 +19,7 @@
 </div>
 <% end %>
 <hr/>
-<% if params[:match_id].present? %>
+<% if params[:match_id].nil? %>
   <%= form_tag mail_results_path, :id => "mailer" do %>
     <%= email_field_tag 'email' %>
     <%= submit_tag 'Mail Results', {:id => "mail-results"} %>
