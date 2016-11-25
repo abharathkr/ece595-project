@@ -1,4 +1,8 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: "no-reply@ece595-myvote.herokuapp.com"
   layout 'mailer'
+end
+
+# app/mailers/match_mail_mailer.rb
+class MatchMailer < ApplicationMailer
 end

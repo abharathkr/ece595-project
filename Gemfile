@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # Stuff for Authentication
-gem 'devise'
-gem 'authority'
-gem 'rolify'
-gem 'pundit'
+#gem 'devise'
+#gem 'authority'
+#gem 'rolify'
+#gem 'pundit'
 gem 'mail'
 # For div_for elements
 gem 'record_tag_helper', '~> 1.0'
