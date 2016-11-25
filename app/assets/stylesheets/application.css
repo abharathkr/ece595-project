@@ -300,7 +300,8 @@ footer { font-size: .85em; margin-bottom: 20px; }
 		.match-results-table td:nth-of-type(2):before { content: "Match"; }
 		.match-results-table td:nth-of-type(3):before { content: "Them"; }
     #content .match-table-question:before { content: ""; }
-    .match-results-table tr td:first-child { text-align: right; }
-    .match-results-table tr td:last-child { text-align: right; }
+    .match-results-table tr td:first-child,
+    .match-results-table tr td,
+    .match-results-table tr td:last-child  { text-align: left; }
 
   }
