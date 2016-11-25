@@ -1,9 +1,6 @@
 <% @cur_zip = nil %>
 <% if params[:match_id].present? %>
   <% @cur_zip = Voter.where(session_id: params[:match_id]) %>
-  <% if @cur_zip.empty? %>
-    <script type="text/javascript">window.location.href="<%= match_start %>"</script>
-  <% end %>
   <% @cur_zip = @cur_zip.first.zip_code %>
 <% else %>
   <% @cur_zip = Voter.where(session_id: session[:session_id]) %>
@@ -22,12 +19,14 @@
 </div>
 <% end %>
 <hr/>
-<%= form_tag mail_results_path, :id => "mailer" do %>
-  <%= email_field_tag 'email' %>
-  <%= submit_tag 'Mail Results', {:id => "mail-results"} %>
+<% if params[:match_id].present? %>
+  <%= form_tag mail_results_path, :id => "mailer" do %>
+    <%= email_field_tag 'email' %>
+    <%= submit_tag 'Mail Results', {:id => "mail-results"} %>
+  <% end %>
+  <p class="fineprint">Your privacy is very important to us. We <span class="underline">do not</span> share your e-mail with third parties, and we will <span class="underline">never</span> contact you.</p>
+  <hr />
 <% end %>
-<p class="fineprint">Your privacy is very important to us. We <span class="underline">do not</span> share your e-mail with third parties, and we will <span class="underline">never</span> contact you.</p>
-<hr />
 <!-- Get Voter Stuff -->
 <% if params[:match_id].present? %>
 <% if Voter.where(session_id: params[:match_id]).present? %>
