@@ -1,0 +1,24 @@
+<h1>Referendas</h1>
+<% if params[:type].present? %><h2><% if params[:type] == "bonds" || params[:type] == "issues" %><%= params[:type].humanize %><% end %></h2><% end %>
+<p>Displaying (<%= @referendas.size %>)
+  <% if params[:type].present? %><% if params[:type] == "bonds" || params[:type] == "issues" %><%= params[:type].humanize %><% end %><% else %>Referenda(s)<% end %>&hellip;</p>
+<table class="detail-table issue-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @referendas.each do |referenda| %>
+        <tr>
+            <td><%= referenda.referenda_title %></td>
+            <td><%= referenda.referenda_desc %></td>
+            <td><%= referenda.referenda_type.humanize %></td>
+            <td><%= link_to 'More...', referenda %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

@@ -1,88 +1,115 @@
-<h1>
-    <span class="underline">Your</span>
-    Match Results</h1>
-<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code ({{voter.zip_id.zip_code}}). See how you match up with them.</p>
-<hr/>
-<input id="mail-results" type="button" value="E-Mail Results"/>
-<hr/>
-<!-- BEGIN MATCH -->
-<div class="match">
-    <h2>You v. <a href="{{link_to_candidate}}">{{candidate.first_name}} {{candidate.last_name}}</a></h2>
-    <h3>Total Match</h3>
-    <p>Psuedocode:<br/>percent = 0; foreach (voter-choice and candidate-choice) { if(voter-choice === candidate-choice) percent++; }<br/>
-        percent = percent * 100;<br/>
-        Use percent in values for class below and percentage value.</p>
-    <div class="match-container">
-        <div class="match-percentage per-30">{{percent}}%</div>
-    </div>
-    <table class="detail-table match-table match-results-table">
-        <thead>
-            <tr>
-                <th>You (voter.id)</th>
-                <th>Match</th>
-                <th>Them (candidate.id)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES/NO<br/>
-                    if voter answer === candidate answer</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES/NO<br/>
-                    if voter answer === candidate answer</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-        </tbody>
-    </table>
-    [...]
-    <hr />
+<% @cur_zip = nil %>
+<% if params[:match_id].present? %>
+  <% @cur_zip = Voter.where(session_id: params[:match_id]) %>
+  <% @cur_zip = @cur_zip.first.zip_code %>
+<% else %>
+  <% @cur_zip = Voter.where(session_id: session[:session_id]) %>
+  <% @cur_zip = @cur_zip.first.zip_code %>
+<% end %>
+<h1><span class="underline">Your</span> Match Results</h1>
+<p>Based on the the answers you gave on the previous page, we have matched you with the following candidates based on your ZIP Code (<%= @cur_zip %>). See how you match up with them.</p>
+<% if Zip.where(zip_code: @cur_zip).empty? %>
+<div id="error_explanation">
+  <h2>No Candidates Found Matching ZIP Code</h2>
+  <p>We currently don't have any candidates matching the ZIP code you've entered (<%= @cur_zip %>).
+    However, using the ZIP code you've provided, we'll be able to build our database
+    based on demand. E-mail your results and you will be provided with a link to check back later
+    to see if your local candidates have been posted.</p>
+    <p>Displaying national race candidates below.</p>
 </div>
-<!-- END -->
+<% end %>
+<hr/>
+<% if params[:match_id].nil? %>
+  <%= form_tag mail_results_path, :id => "mailer" do %>
+    <%= email_field_tag 'email' %>
+    <%= submit_tag 'Mail Results', {:id => "mail-results"} %>
+  <% end %>
+  <p class="fineprint">Your privacy is very important to us. We <span class="underline">do not</span> share your e-mail with third parties, and we will <span class="underline">never</span> contact you.</p>
+  <hr />
+<% end %>
+<!-- Get Voter Stuff -->
+<% if params[:match_id].present? %>
+<% if Voter.where(session_id: params[:match_id]).present? %>
+  <% @cur_voter = Voter.where(session_id: params[:match_id]) %>
+  <% @cur_voter = @cur_voter.first.id %>
+  <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
+    <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
+  <% else %>
+    <script type="text/javascript">window.location.href="<%= match_start %>"</script>
+  <% end %>
+<% end %>
+<% else %>
+  <% if Voter.where(session_id: session[:session_id]).present? %>
+    <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
+    <% @cur_voter = @cur_voter.first.id %>
+    <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
+      <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
+    <% else %>
+      <script type="text/javascript">window.location.href="<%= match_start %>"</script>
+    <% end %>
+  <% end %>
+<% end %>
+<!-- END Get Voter Stuff -->
+
 <!-- BEGIN MATCH -->
-<div class="match">
-    <h2>You v. <a href="{{link_to_candidate}}">{{candidate.first_name}} {{candidate.last_name}}</a></h2>
+<% @candidates.each do |candidate| %>
+  <!-- Get Candidate Stuff -->
+  <% if QuestionChoice.where(candidate_id: candidate.id).present? %>
+    <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id) %>
+    <% @cur_can_null = true %>
+  <% else %>
+    <% @cur_can_null = false %>
+  <% end %>
+  <!-- END Get Candidate Stuff -->
+<% if @cur_can_null %>
+  <div class="match">
+    <h2>You v. <%= link_to candidate.first_name + " " + candidate.last_name, candidate %></h2>
     <h3>Total Match</h3>
     <div class="match-container">
-        <div class="match-percentage per-70">70%</div>
+        <% @match_counter = 0 %>
+        <% @cur_voter_stances.zip(@cur_can_stances).each do |voter_stance, can_stance| %>
+          <% unless can_stance.nil? %>
+            <% if voter_stance.choice.choice == can_stance.choice.choice %>
+              <% @match_counter += 1 %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% @match_counter *= 10 %>
+        <div class="match-percentage per-<%= @match_counter %>"><%= @match_counter %>%</div>
     </div>
-    <table class="detail-table match-table match-results-table">
-        <thead>
-            <tr>
-                <th>You (voter.id)</th>
-                <th>Match</th>
-                <th>Them (candidate.id)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-            <tr>
-                <td class="match-table-question" colspan="3">{{question.question}}</td>
-            </tr>
-            <tr>
-                <td>{{question_choices.choice}}</td>
-                <td>YES</td>
-                <td>{{question_choices.choice}}</td>
-            </tr>
-        </tbody>
-    </table>
-    [...]
-    <hr />
-</div>
-<!-- END -->
+  </div>
+  <table class="detail-table match-table match-results-table">
+      <thead>
+          <tr>
+              <th>You</th>
+              <th>Match</th>
+              <th><%= candidate.first_name + " " + candidate.last_name %></th>
+          </tr>
+      </thead>
+      <tbody>
+          <% @cur_voter_stances.zip(@cur_can_stances).each do |voter_stance, can_stance| %>
+          <% @topic = Question.where(id: voter_stance.question_id) %>
+          <tr>
+              <td class="match-table-question" colspan="3"><%= @topic.first.question_topic %></td>
+          </tr>
+              <tr>
+                  <td><%= voter_stance.choice.choice %></td>
+                  <td class="match-y-n">
+                    <% unless can_stance.nil? %>
+                      <% if voter_stance.choice.choice == can_stance.choice.choice %>
+                        <span class="match-yes">YES</span>
+                      <% else %>
+                        <span class="match-no">NO</span>
+                      <% end %>
+                      <% else %>
+                        <span class="match-na">N/A</span>
+                    <% end %>
+                  </td>
+                  <td><% unless can_stance.nil? %><%= can_stance.choice.choice %><% else %>N/A<% end %></td>
+              </tr>
+          <% end %>
+      </tbody>
+  </table>
+  <% end %>
+<% end %>
+<!-- END MATCH -->

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  choice: one
+  question: one
+  voter: one
+  candidate: one
+
+two:
+  choice: two
+  question: two
+  voter: two
+  candidate: two

@@ -1,0 +1,22 @@
+<%= form_for @voter do |f| %> <!--, url: match_start_url-->
+  <% if voter.errors.any? %>
+    <div id="error_explanation">
+      <h2>An error occurred</h2>
+      <ul>
+        <li>You have to enter your ZIP Code to continue.</li>
+      </ul>
+    </div>
+  <% end %>
+  <!-- Custom -->
+  <div class="match-q-a">
+      <h1>Enter your ZIP Code</h1>
+    <%= f.label nil, "ZIP Code" %>
+    <%= f.hidden_field :session_id, :value => session[:session_id] %>
+    <%= f.text_field :zip_code, :autofocus=>true, :maxlength=>5, :placeholder=>12345, :onkeypress=>"return event.charCode >= 48 && event.charCode <= 57" %>
+  </div>
+  <div class="actions">
+    <!--<input id="reset-match" type="reset" value="Reset Answers" />-->
+    <%= f.submit "Continue" %>
+  </div>
+  <!-- End Custom -->
+<% end %>

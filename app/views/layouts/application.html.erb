@@ -18,9 +18,9 @@
         <ul>
           <li><%= link_to "Candidates", candidates_path %></li>
           <li><%= link_to "Judges", judges_path %></li>
-          <li><%= link_to "Issues", issues_path %></li>
-          <li><%= link_to "Bonds", bonds_path %></li>
-          <li class="li-match"><%= link_to "Find Your Match", match_path %></li>
+          <li><%= link_to "Issues", referendas_path(:type=>"issues") %></li>
+          <li><%= link_to "Bonds", referendas_path(:type=>"bonds") %></li>
+          <li class="li-match"><%= link_to "Find Your Match", match_start_path %></li>
         </ul>
         </div>
       </div>

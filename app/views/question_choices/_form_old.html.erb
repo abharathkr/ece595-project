@@ -1,0 +1,34 @@
+<%= form_for(question_choice) do |f| %>
+  <% if question_choice.errors.any? %>
+    <div id="error_explanation">
+      <h2>An error prohibited these questions from being saved:</h2>
+      <ul>
+          <li>You must answer <span class="underline">all</a> the questions</li>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :choice_id %>
+    <%= f.text_field :choice_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :question_id %>
+    <%= f.text_field :question_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :voter_id %>
+    <%= f.text_field :voter_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :candidate_id %>
+    <%= f.text_field :candidate_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

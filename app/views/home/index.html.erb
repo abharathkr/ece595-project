@@ -7,8 +7,8 @@
     serves as a way to to get all those answers in one place. Review the
     <%= link_to "candidates", candidates_path %>,
     <%= link_to "judges", judges_path %>,
-    <%= link_to "issues", issues_path %>, and
-    <%= link_to "bonds", bonds_path %>,
+    <%= link_to "issues", referendas_path(:type=>"issues") %>, and
+    <%= link_to "bonds", referendas_path(:type=>"bonds") %>,
     for your area, and use our
     <%= link_to "completely anonymous matching tool", match_path %>
     to find the candidate that supports the issues you care about.

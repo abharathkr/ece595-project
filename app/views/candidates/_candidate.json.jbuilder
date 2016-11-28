@@ -1,0 +1,2 @@
+json.extract! candidate, :id, :first_name, :last_name, :isEncumbent, :biography, :email, :pol_URL, :pol_Aff, :hasPicture, :running_for, :created_at, :updated_at
+json.url candidate_url(candidate, format: :json)

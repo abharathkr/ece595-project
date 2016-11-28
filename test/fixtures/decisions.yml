@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  decision_title: MyString
+  decision_desc: MyText
+  decision_position: MyString
+  decision_source_URL: MyString
+  decision_date: 2016-11-20
+  judge: one
+
+two:
+  decision_title: MyString
+  decision_desc: MyText
+  decision_position: MyString
+  decision_source_URL: MyString
+  decision_date: 2016-11-20
+  judge: two

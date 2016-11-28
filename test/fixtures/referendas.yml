@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  referenda_title: MyString
+  referenda_desc: MyText
+  referenda_type: MyString
+  ballot: one
+
+two:
+  referenda_title: MyString
+  referenda_desc: MyText
+  referenda_type: MyString
+  ballot: two
