@@ -119,7 +119,7 @@ Referenda.create(referenda_title: "Bond Question C", referenda_desc: "N/A", refe
 Referenda.create(referenda_title: "Bond Question D", referenda_desc: "N/A", referenda_type: "bonds", referenda_amt: "$18,196,000")
 
 #Questions
-Question.create(question_topic: "Federal Minimum Wage", question: "Do you support raising the federal or state minimum wage?", question_desc: "The federal minimum wage for covered nonexempt employees is $7.25 per hour effective July 24, 2009. The federal minimum wage provisions are contained in the Fair Labor Standards Act (FLSA). Many states also have minimum wage laws.") #1
+Question.create(question_topic: "Federal Minimum Wage", question: "Do you support raising the federal minimum wage?", question_desc: "The federal minimum wage for covered nonexempt employees is $7.25 per hour effective July 24, 2009. The federal minimum wage provisions are contained in the Fair Labor Standards Act (FLSA). Many states also have minimum wage laws.") #1
 Choice.create(choice: "Yes, raise minimum wage.", question_id: '1')
 Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
 
@@ -127,15 +127,15 @@ Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
 QuestionChoice.create(choice_id: '1', question_id: '1', candidate_id: '1', choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
 QuestionChoice.create(choice_id: '2', question_id: '1', candidate_id: '2', choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
 
-Question.create(question_topic: "NAFTA & TPP", question: "Where do you stand on trade agreements?", question_desc: "The goal of the North American Free Trade Agreement (NAFTA) was to eliminate barriers to trade and investment between the U.S., Canada and Mexico. The goal of the Trans-Pacific Partnership (TPP) is to promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; raise living standards; reduce poverty in the signatories' countries; and promote transparency, good governance, and enhanced labor and environmental protections.") #2
-Choice.create(choice: "For NAFTA & TPP", question_id: '2')
-Choice.create(choice: "Against NAFTA & TPP", question_id: '2')
-Choice.create(choice: "For NAFTA, Against TPP", question_id: '2')
-Choice.create(choice: "Against NAFTA, For TPP", question_id: '2')
+Question.create(question_topic: "Marijuana Legalization", question: "Where do you stand on the legalization of recreational marijuana usage?", question_desc: "Would legalize the production, sale, & potential taxation of marijuana and personal consumption in adults.") #2
+Choice.create(choice: "Legalize it nationwide.", question_id: '2')
+Choice.create(choice: "Leave it up to the states", question_id: '2')
+Choice.create(choice: "Medical usage only, not recreational.", question_id: '2')
+Choice.create(choice: "Keep illegal.", question_id: '2')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "1", choice_source_URL: "http://www.pri.org/stories/2016-07-28/hillary-clinton-s-stand-nafta-and-tpp-it-s-complicated-and-evolving")
-QuestionChoice.create(choice_id: "4", question_id: "2", candidate_id: "2", choice_source_URL: "http://abcnews.go.com/Business/trump-trade-president-elect-tear-tpp-nix-nafta/story?id=43467294")
+QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "1", choice_source_URL: "https://blog.mpp.org/medical-marijuana/hillary-clinton-changes-her-tune-on-marijuana-policy/")
+QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "2", choice_source_URL: "https://mic.com/articles/123400/donald-trump-where-2016-candidate-stands-on-gun-control-marijuana-and-immigration")
 
 Question.create(question_topic: "Sam-Sex Marriage", question: "What is your position on same-sex marriage?", question_desc: "Does not define marriage on the basis of gender. Allows the same protections as heterosexual marriages.") #3
 Choice.create(choice: "For Same-Sex Marriage", question_id: '3')
@@ -170,34 +170,39 @@ Choice.create(choice: "Should be kept, but altered.", question_id: '6')
 QuestionChoice.create(choice_id: "13", question_id: "6", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
 QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
 
-Question.create(question_topic: "Foreign Involvement", question: "Where do you stand on the United States' involvement in foreign affairs?") #7
-Choice.create(choice: "Focus on our country, less on foreign affairs.", question_id: '7')
-Choice.create(choice: "Aid in issues abroad.", question_id: '7')
+Question.create(question_topic: "Education", question: "Where do you stand on the United States education system?") #7
+Choice.create(choice: "For Vouchers", question_id: '7')
+Choice.create(choice: "Against Vouchers", question_id: '7')
+Choice.create(choice: "For Evaluations", question_id: '7')
+Choice.create(choice: "Against Evaluations", question_id: '7')
+Choice.create(choice: "For Common Core", question_id: '7')
+Choice.create(choice: "Against Common Core", question_id: '7')
+Choice.create(choice: "Opinion varies", question_id: '7')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "17", question_id: "7", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
-QuestionChoice.create(choice_id: "16", question_id: "7", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
+QuestionChoice.create(choice_id: "22", question_id: "7", candidate_id: "1", choice_source_URL: "https://www.washingtonpost.com/news/answer-sheet/wp/2015/04/20/what-hillary-clinton-said-about-the-common-core-state-standards/")
+QuestionChoice.create(choice_id: "21", question_id: "7", candidate_id: "2", choice_source_URL: "http://www.npr.org/sections/ed/2016/11/10/501426803/can-president-trump-get-rid-of-common-core")
 
 Question.create(question_topic: "Immigration", question: "Where do you stand on immigration?", question_desc: "The United States Department of Homeland Security (DHS) has estimated that 11.4 million unauthorized immigrants lived in the United States in January 2012.") #8
 Choice.create(choice: "Undocumented immigrants should be deported.", question_id: '8')
 Choice.create(choice: "Undocumented immigrants should be given a path to citizenship.", question_id: '8')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "19", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
-QuestionChoice.create(choice_id: "18", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
+QuestionChoice.create(choice_id: "23", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
+QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
 
 Question.create(question_topic: "Fracking", question: "What is your opinion on fracking?", question_desc: "Fracking is the process of injecting liquid at high pressure into subterranean rocks, boreholes, etc., so as to force open existing fissures and extract oil or gas.") #9
 Choice.create(choice: "Fracking should be allowed.", question_id: '9')
 Choice.create(choice: "Fracking is dangerous, should be halted.", question_id: '9')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "20", question_id: "9", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/apr/13/bernie-s/does-hillary-clinton-support-fracking/")
-QuestionChoice.create(choice_id: "20", question_id: "9", candidate_id: "2", choice_source_URL: "http://thehill.com/policy/energy-environment/290186-trump-rattles-industry-with-fracking-position")
+QuestionChoice.create(choice_id: "25", question_id: "9", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/apr/13/bernie-s/does-hillary-clinton-support-fracking/")
+QuestionChoice.create(choice_id: "25", question_id: "9", candidate_id: "2", choice_source_URL: "http://thehill.com/policy/energy-environment/290186-trump-rattles-industry-with-fracking-position")
 
 Question.create(question_topic: "Taxes", question: "What would you like done in regards to taxes on the middle class?") #10
 Choice.create(choice: "Lower taxes on middle class.", question_id: '10')
 Choice.create(choice: "Raise taxes on middle class.", question_id: '10')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
-QuestionChoice.create(choice_id: "22", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
+QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
+QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
