@@ -188,8 +188,8 @@ Choice.create(choice: "Undocumented immigrants should be deported.", question_id
 Choice.create(choice: "Undocumented immigrants should be given a path to citizenship.", question_id: '8')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "23", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
-QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
+QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
+QuestionChoice.create(choice_id: "23", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
 
 Question.create(question_topic: "Fracking", question: "What is your opinion on fracking?", question_desc: "Fracking is the process of injecting liquid at high pressure into subterranean rocks, boreholes, etc., so as to force open existing fissures and extract oil or gas.") #9
 Choice.create(choice: "Fracking should be allowed.", question_id: '9')
