@@ -1,5 +1,9 @@
 <h1><%= @referenda.referenda_title %></h1>
-<h2><%= @referenda.referenda_type.humanize %></h2>
+<h2><%= @referenda.referenda_type.humanize %>
+<% if @referenda.referenda_amt.present? %>
+  <br />Cost: <%= @referenda.referenda_amt %>
+<% end %>
+</h2>
 <p><%= @referenda.referenda_desc %></p>
 
 <!--

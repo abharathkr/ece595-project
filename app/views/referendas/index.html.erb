@@ -15,7 +15,7 @@
       <% @referendas.each do |referenda| %>
         <tr>
             <td><%= referenda.referenda_title %></td>
-            <td><%= referenda.referenda_desc %></td>
+            <td><%= truncate(referenda.referenda_desc, :length => 75) %></td>
             <td><%= referenda.referenda_type.humanize %></td>
             <td><%= link_to 'More...', referenda %></td>
         </tr>
