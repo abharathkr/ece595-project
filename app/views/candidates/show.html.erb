@@ -2,10 +2,10 @@
 <h2>Candidacy: <%= @candidate.running_for %> (<%= @candidate.office_type %>)<br />
 Last Political Position: <% if @terms.present? %><%= @terms.first.position_title %><% else %>None<% end %>
 <br />
-<% if @candidate.isEncumbent == true %>Encumbent,<% end %>
+<% if @candidate.isEncumbent == true %>Incumbent,<% end %>
 <%= @candidate.pol_Aff %><br />
 <% if @candidate.precinct_id.present? && Precinct.where(id: @candidate.precinct_id).present? %>
-  Precinct: <%= @precincts.first.precinct_num %>,
+  <% if @precincts.first.precinct_num != "0" %>Precinct: <%= @precincts.first.precinct_num %>,<% end %>
   <%= @cities.first.city_name %>,
   <%= @counties.first.county_name %>,
   <%= @states.first.state_name %>,
@@ -16,7 +16,7 @@ Last Political Position: <% if @terms.present? %><%= @terms.first.position_title
     <% if @candidate.email.present? %><li><a href="<%= @candidate.email %>">Contact</a></li><% end %>
     <% if @candidate.pol_URL.present? %><li><a href="<%= @candidate.pol_URL %>">Website</a></li><% end %>
 </ul>
-<p><%= @candidate.biography %></p>
+<p><%= @candidate.biography.html_safe %></p>
 <% if @stances.present? %>
 <h3>Positions</h3>
   <table class="detail-table candidate-stance-table">
@@ -31,11 +31,13 @@ Last Political Position: <% if @terms.present? %><%= @terms.first.position_title
         <% @stances.each do |stance| %>
           <% @topic = Question.where(id: stance.question_id) %>
           <% @position = Choice.where(id: stance.choice_id, question_id: stance.question_id) %>
+          <% if @position.present? %>
           <tr>
               <td><%= @topic.first.question_topic %></td>
               <td><%= @position.first.choice %></td>
-              <td><a href="<%= stance.choice_source_URL %>">Source</a></td>
+              <td><% if stance.choice_source_URL.present? %><a href="<%= stance.choice_source_URL %>">Source</a><% else %>N/A<% end %></td>
           </tr>
+          <% end %>
         <% end %>
     </tbody>
   </table>
