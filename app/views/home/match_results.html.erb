@@ -126,7 +126,7 @@
 <!-- END NATIONAL -->
 <!-- STATE -->
 <!-- BEGIN MATCH -->
-<% if @candidates.where(office_type: "State").present? %>
+<% if @candidates.where(office_type: "State").present? && @cur_precinct.present? %>
     <h1>State Races</h1>
     <% @candidates.each do |candidate| %>
       <% @cur_precinct.each do |precinct| %>
