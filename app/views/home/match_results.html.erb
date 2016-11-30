@@ -2,7 +2,6 @@
 <% @cur_precinct = nil %>
 <% if params[:match_id].present? %>
   <% @cur_zip = Voter.where(session_id: params[:match_id]) %>
-  <% @cur_precinct = @curzip.precinct_id %>
   <% @cur_zip = @cur_zip.first.zip_code %>
   <% @cur_precinct = Zip.where(zip_code: @cur_zip) %>
 <% else %>
