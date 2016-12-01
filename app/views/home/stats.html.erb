@@ -1,0 +1,9 @@
+<h1>Match Statistics</h1>
+<p>Our data currently consists of:</p>
+<ul class="seed-list">
+  <li>(<%= @zips.size %>) ZIP Code(s)</li>
+  <li>(<%= @candidates.size %>) Candidate(s)</li>
+  <li>(<%= @judges.size %>) Judges(s)</li>
+  <li>(<%= @referendas.size %>) Referendum(s)</li>
+</ul>
+<p>We are currently matching (<%= @voters.size %>) total voter(s) from (<%=@voters.select(:zip_code).distinct.size %>) ZIP code(s).</p>

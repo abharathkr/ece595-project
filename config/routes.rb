@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #resources :terms
   resources :candidates, only: [:index, :show]
   get 'match_results', to: 'home#match_results', as: 'match_results'
+  get 'stats', to: 'home#stats', as: 'stats'
   get 'match_start', to: 'voters#new', as: 'match_start'
   #match 'match_start', to: "voters#new", as: 'match_start', via: [:get, :post]
   get 'match', to: 'question_choices#new', as: 'match'

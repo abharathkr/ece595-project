@@ -2,7 +2,13 @@ class HomeController < ApplicationController
   def candidates
     @candidates = Candidate.all
   end
-
+  def stats
+    @voters = Voter.all
+    @candidates = Candidate.all
+    @zips = Zip.all
+    @judges = Judge.all
+    @referendas = Referenda.all
+  end
   def match
     @questions = Question.all
     @choices = Choice.all
