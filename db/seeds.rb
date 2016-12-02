@@ -90,11 +90,19 @@ Zip.create(zip_code: '87109', precinct_id: '4')
 
 
 #Candidates
+##Presidential (1, 2)
 Candidate.create(first_name: "Hillary", last_name: "Clinton", isEncumbent: false, email: "mailto:hdr29@hrcoffice.com", pol_URL: "http://hillaryclinton.com", pol_Aff: "Democrat", hasPicture: false, running_for: "President of the United States", office_type: "National", biography: "Hillary Diane Rodham Clinton (born October 26, 1947) is an American politician who was the 67th United States Secretary of State from 2009 to 2013, U.S. Senator from New York from 2001 to 2009, and First Lady of the United States from 1993 to 2001. She is the Democratic Party's nominee for President of the United States in the 2016 election.")
 Candidate.create(first_name: "Donald", last_name: "Trump", isEncumbent: false, pol_URL: "http://donaldjtrump.com/", pol_Aff: "Republican", hasPicture: false, running_for: "President of the United States", office_type: "National", biography: "Donald John Trump (born June 14, 1946) is an American businessman. In June 2015, Trump announced his candidacy for president as a Republican and quickly emerged as the front-runner for his party's nomination. His rivals suspended their campaigns in May 2016, and in July he was formally nominated at the party convention. Trump was born and raised in New York City and received a bachelor's degree in economics from the Wharton School in 1968. In 1971 he took control of his family's real estate and construction firm, Elizabeth Trump & Son, and renamed it The Trump Organization. He later expanded the business with other products and activities. Trump has built office towers, hotels, casinos, golf courses, and other Trump-branded facilities worldwide. He owned the Miss USA pageants from 1996 to 2015, and has made cameo appearances in films and television series. From 2004 to 2015, Trump hosted and co-produced The Apprentice, a reality television series on NBC. He sought the Reform Party's presidential nomination in 2000, but withdrew before voting began. As of 2016, he was listed by Forbes as the 336th wealthiest person in the world, and 156th in the United States, with a net worth of $4.5 billion.")
+
+##State (3 - 8)
 Candidate.create(first_name: "Michelle", last_name: "Grisham", precinct_id: '1', isEncumbent: true, email: "https://lujangrisham.house.gov/contact", pol_URL: "https://lujangrisham.house.gov/", pol_Aff: "Democrat", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "Michelle Lujan Grisham (born October 24, 1959) is an American lawyer and politician who is the U.S. Representative for New Mexico's 1st congressional district, serving since 2013. She has served in the New Mexico state cabinet, and as Bernalillo County Commissioner.")
 Candidate.create(first_name: "Richard", last_name: "Priem", precinct_id: '1', isEncumbent: false, email: "http://newmexicansforpriem.com/index.php/contact-richard/", pol_URL: "http://newmexicansforpriem.com/", pol_Aff: "Republican", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "Prie holds a B.S. in radio, television and film from the University of Texas, a Master of Education degree in educational media from the University of Georgia and completed coursework in a Doctor of Psychology program at the College of William and Mary. Before his 21 years of service in the Army, Priem worked as a news reporter and disk jockey on several radio stations in Texas. During his Army career he worked as provost marshal, as an assistant professor at the U.S. Military Academy and as inspector general at the Department of the Army. He is currently an Albuquerque businessman.")
 Candidate.create(first_name: "Steve", last_name: "Pearce", precinct_id: '2', isEncumbent: true, email: "http://pearce.house.gov/contact-me/email-me", pol_URL: "http://pearce.house.gov/", pol_Aff: "Republican", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "<p>Stevan Edward 'Steve' Pearce (born August 24, 1947) is an American politician who has been the U.S. Representative for New Mexico's 2nd congressional district since 2011. He is a member of the Republican Party. He previously held the seat from 2003 to 2009 and was an Assistant Minority Whip.</p><p>He is currently the only Republican in the New Mexico Congressional Delegation.</p>")
+Candidate.create(first_name: "Merrie Lee", last_name: "Soules", precinct_id: '2', isEncumbent: false, email: "http://soulesuscongress.com/contact/", pol_URL: "http://soulesuscongress.com/", pol_Aff: "Democrat", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "'Running for Congress on the platform to restore trust, accountability and public access to government for every person living in southern New Mexico,' said Soules, whose father was a university physics professor and whose mother was a social worker. Soules’ run for office is fueled by her concern about Washington’s dysfunction and the overall weakening of our democracy caused by economic and political inequality.")
+Candidate.create(first_name: "Michael", last_name: "Romero", precinct_id: '3', isEncumbent: false, email: "http://www.michaelromeroforcongress.com/contact-romero.html", pol_URL: "http://www.michaelromeroforcongress.com/", pol_Aff: "Republican", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "<p>Michael Romero was born in Embudo, New Mexico, on Nov. 22 1960.  He was raised by his parents Laudes and Polly Romero in the Vadito-Penasco area until his junior year in High School.  Then, when he was 16 the family moved to Grants to find work in the mines. It was there that Michael met the love of his life, Francesca, in English class.  It was true love at first site! These two married and have been together for 38 years.</p><p>After graduation from Grants High in 1978, Michael enlisted in the Us Air Force.  While he was in training at Lowry AFB, Colorado, their first son, Christopher, was born. His first duty station was Wurtsmith AFB, Michigan where a daughter, Anica was born.</p><p>Michael and Francesca sorely missed home and family, so Michael requested a transfer. They received orders to Cannon AFB, in Clovis, and were assigned there for two and a half years. After Clovis came Albuquerque, and then San Cristobal where Michael went to work at the Moly Corporation mine.  When the mine had layoffs, he was offered the opportunity to serve as a deputy sheriff for Taos County. He took that job and worked as a deputy for two years.</p><p>In Taos County, the pay was low, almost minimum wage, and they struggled to make ends meet. So, in 1988 Michael and Francesca moved to Las Vegas Nevada, to take a job with Las Vegas Metropolitan Police Department where the salary would be a third higher. He started at the police Academy in 1989 and worked Las Vegas as police officer for 14 years. Then, in 2003 he moved again to serve as a resident officer in Searchlight, Nevada for his last 8.5 years with LVMPD.</p><p>After retirement the family moved back home to retire from police work.  Michael worked in his gardens, he fished and hunted, harvested wood for winter fuel and for furniture that he made for their home. But, most of all, he was able to spend time with his three grandchildren and enjoyed reading, his favorite pastime indoors!</p><p>During the 2014 election, the Republican Party of Taos County was seeking to replace their candidate for Sheriff. Michael met with the party for interviews, and later the chairman asked if he would consider running for another position, that of running for Congress. It took 3 months of careful consideration, talking with others, meeting with local ranchers, farmers and businessmen, but Michael finally agreed that his background, his values, and his direction in life would serve all New Mexicans well as Representative for the Congressional 3rd District.  So he said yes.</p>")
+Candidate.create(first_name: "Ben", last_name: "Luján", precinct_id: '3', isEncumbent: true, email: "http://www.benrlujan.com/contact", pol_URL: "http://www.benrlujan.com/", pol_Aff: "Democrat", hasPicture: false, running_for: "US Representative", office_type: "State", biography: "Ben Ray has fought to improve health care for New Mexicans by investigating the health-insurance industry’s denial practices and spearheading development of legislation that expands access to insurance and closes loopholes. The industry had been using these loopholes to unfairly deny medical claims and void policies. Luján also took on Qwest when they refused to honor their promise to invest in New Mexico.")
+
+##County
 Candidate.create(first_name: "Patricia", last_name: "Paiz", precinct_id: '2', isEncumbent: false, pol_URL: "http://www.votepatriciapaiz.com/", pol_Aff: "Republican", hasPicture: false, running_for: "County Commissioner", office_type: "County", biography: "<p>Patricia B. Paiz was born and raised in Albuquerque’s South Valley where she attended Pajarito Elementary School, Polk Middle School and graduated from Rio Grande High School.  Patricia served her community as a Police Officer with the Albuquerque Police Department. She retired after twenty years of service.  While at APD she worked in the Field Services Division, Recruiting, Impact unit, Pawn Shop Division, and the Crime Stoppers Unit.  While in Crime Stoppers she was instrumental in organizing the International Crime Stoppers Convention that was held on the program's 30th anniversary in Albuquerque in 2006.  She helped organize and run the Cops for Kids program which helped underprivileged children throughout the metro area.  She was awarded Non-Uniformed officer of the year in 2002.   Patricia earned her degree in Management from the University of Phoenix while working full time at APD and while being a mother.  She is currently a licensed Real Estate Qualifying Broker and the owner of her own firm.</p><p>Patricia grew up in Pajarito, where  her grandparents Carlos and Frances were farmers.  She is the daughter of Ronald Paiz Sr., and Bernadine Paiz.   Growing up her parents instilled the importance of hard work and service to the community.  Ronald Paiz Sr., is a retired Captain from the Albuquerque Fire Department, who  also   farmed to make ends meet.   Bernadine is a homemaker who raised five children.  Patricia has four brothers; one a retired Captain from APD who recently served as the Undersheriff for the Bernalillo County Sheriff’s Department, one a retired Captain from AFD, and one currently serves as a Captain with AFD.  Her fourth brother currently works in the family real estate business.​</p><p>Patricia values hard work and service to the community,  a value which reflects in her children.  Her eldest son is a sergeant with the Albuquerque Police Department and younger son, a firefighter with the Albuquerque Fire Department,  She also has a  teenage daughter.  She is married to Bill Reed a retired Captain from the Bernalillo County Sheriff’s Department and the former Chief of Police for Albuquerque Public Schools.</p>")
 Candidate.create(first_name: "Steven", last_name: "Quezada", precinct_id: '2', isEncumbent: false, pol_URL: "http://www.stevenmichaelquezada.com/", pol_Aff: "Democrat", hasPicture: false, running_for: "County Commissioner", office_type: "County", biography: "He's that guy from Breaking Bad.")
 Candidate.create(first_name: "Maggie", last_name: "Stebbins", precinct_id: '3', isEncumbent: false, pol_URL: "http://www.maggiehartstebbins.com/", pol_Aff: "Democrat", hasPicture: false, running_for: "County Commissioner", office_type: "County", biography: "<p>Maggie Hart Stebbins has served as Bernalillo County Commissioner for District 3 since 2009, winning elections to keep the seat in 2010 and 2012. She is running for a final term in 2016. Maggie is a proven leader who has dedicated her time on the Commission to improving public safety, creating jobs, championing our families and defending our environment. She also led the effort to bring ethics reform to Bernalillo County.</p><p>A resident of the UNM neighborhood since 1966, Maggie attended Montezuma Elementary School, Our Lady of Fatima, and the Albuquerque Academy. She has been married to Eric Stebbins for more than 25 years, and they have four children.</p><p>Maggie’s community leadership includes serving on several boards, including the New Mexico Children’s Foundation, the New Mexico Mutual Group Board of Directors, Albuquerque’s Open Space and BioPark Advisory Boards, the Bernalillo County Metropolitan Court Judicial Selection Commission and the YWCA.</p>")
@@ -103,7 +111,6 @@ Candidate.create(first_name: "Maryellen", last_name: "Ortega-Saenz", precinct_id
 Candidate.create(first_name: "Linda", last_name: "Stover", precinct_id: '2', isEncumbent: false, pol_URL: "http://www.stover2016.com/", pol_Aff: "Democrat", hasPicture: false, running_for: "County Clerk", office_type: "County", biography: "Linda Stover is a lifelong democrat, brought up in a union home in Carlsbad, New Mexico. Her dad, Drew Cloud, was president of the Potash Workers of America. He was also a State Legislator, State Democratic Party Chairman and ran for governor of New Mexico.")
 Candidate.create(first_name: "Kim", last_name: "Hillard", precinct_id: '2', isEncumbent: false, pol_Aff: "Republican", hasPicture: false, running_for: "County Treasurer", office_type: "County", biography: "First vice chairman, Republican Party of Bernalillo County, 2014-16; member, Republican Party of Bernalillo County Executive Committee, 2013-16; Republican Ward 24 Officer 1998-2014; worked on multiple successful elections of Republican candidates and a few that were not successful; Air Force, 1967-1992.")
 Candidate.create(first_name: "Nancy", last_name: "Marie Bearce", precinct_id: '2', isEncumbent: false, pol_Aff: "Democrat", hasPicture: false, running_for: "County Treasurer", office_type: "County", biography: "Albuquerque Neighborhood Task Force, elected chair, 2007; Democratic Party of Bernalillo County: Precinct Chair, State Central Committee member, Ward 19B secretary/treasurer; volunteer on various political campaigns; EMERGE New Mexico, graduate of 2014 class.")
-
 
 #Hillary Terms
 Term.create(position_title: "First Lady of Arkansas", termStart: Date.parse("1979-1-9"), termEnd: Date.parse("1981-1-19"), candidate_id: 1)
@@ -120,7 +127,12 @@ Term.create(position_title: "U.S. House of Representatives (NM)", termStart: Dat
 #Pearce Terms
 Term.create(position_title: "U.S. House of Representatives (NM)", termStart: Date.parse("2011-1-3"), candidate_id: 5)
 Term.create(position_title: "U.S. House of Representatives (NM)", termStart: Date.parse("2003-1-3"), termEnd: Date.parse("2009-1-3"), candidate_id: 5)
-Term.create(position_title: "New Mexico House of Representatives", termStart: Date.parse("1996-1-1"), termEnd: Date.parse("2000-12-31"), candidate_id: 5)
+Term.create(position_title: "New Mexico House of Representatives", termStart: Date.parse("1996-1-3"), termEnd: Date.parse("2000-12-31"), candidate_id: 5)
+
+#Luján
+Term.create(position_title: "Chair of the Democratic Congressional Campaign Committee", termStart: Date.parse("2015-1-3"), candidate_id: 8)
+Term.create(position_title: "U.S. House of Representatives (NM)", termStart: Date.parse("2009-1-3"), candidate_id: 8)
+Term.create(position_title: "New Mexico Public Regulation Commission", termStart: Date.parse("2005-1-3"), termEnd: Date.parse("2008-1-1"), candidate_id: 8)
 
 #Judge
 Judge.create(first_name:"Raul", last_name: "Torrez", running_for: "District Attorney", isSitting: true, biography: "Born and raised in Albuquerque, Raúl Torrez is a former federal prosecutor and senior adviser in President Obama’s Department of Justice. Working for nearly a decade as an Assistant United States Attorney, Assistant Attorney General and Assistant District Attorney, Raúl has worked at every level of the criminal justice system to protect our community and fight for justice.", email: "http://www.raultorrez.com/transition_contact", precinct_id: "1")
@@ -134,7 +146,6 @@ Judge.create(first_name: "Debra", last_name: "Ramirez", running_for: "District C
 Judge.create(first_name: "Chris", last_name: "Schultz", running_for: "Justice of Court of Appeals", isSitting: true, biography: "Chris J. Schultz is a Sandia High School graduate, received a Bachelor of Arts degree from Baylor University, and a Juris Doctorate from the University of New Mexico School of Law in Albuquerque, New Mexico.", email: "http://www.keepjudgeschultz.com/contact.html")
 Judge.create(first_name: "Christine", last_name: "Rodriguez", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Vargas has worked as a litigator for Hunt & Davis P.C. for over twenty years. Her primary areas of focus are in personal injury and commercial law", email: "mailto:rodriguez4metrocourt@gmail.com")
 Judge.create(first_name: "Renee", last_name: "Torres", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Renée Torres – native New Mexican, life-long Democrat and Chief Judge of the Zia Tribal Court – is running for Metropolitan Court Judge in Bernalillo County. She is running for Division 3 and will be on the June 7, Democratic Primary Election ballot. She will bring experience, fairness and integrity to the bench.", email: "http://www.electreneetorres.com/contact.html")
-Decision.create(decision_title: "Man v. The World", decision_desc: "Man blames the world for his problems.", decision_position: "Found in favor of the World.", decision_date: Date.parse("2015-02-12"), judge_id: '1')
 
 #Judge Honors
 Honor.create(judge_id: '2', description: "MADD’s national judge of the year for combating DWI.")
@@ -166,6 +177,7 @@ Choice.create(choice: "No, don't raise minimum wage.", question_id: '1')
 QuestionChoice.create(choice_id: '1', question_id: '1', candidate_id: '1', choice_source_URL: "https://www.hillaryclinton.com/feed/middle-class-needs-raise-heres-how-hillary-clinton-plans-do-it/")
 QuestionChoice.create(choice_id: '2', question_id: '1', candidate_id: '2', choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/jul/28/donald-trump/donald-trump-gets-full-flop-stance-minimum-wage/")
 QuestionChoice.create(choice_id: "1", question_id: "1", candidate_id: "3")
+QuestionChoice.create(choice_id: "2", question_id: "1", candidate_id: "4")
 QuestionChoice.create(choice_id: "2", question_id: "1", candidate_id: "5")
 
 Question.create(question_topic: "Marijuana Legalization", question: "Where do you stand on the legalization of recreational marijuana usage?", question_desc: "Would legalize the production, sale, & potential taxation of marijuana and personal consumption in adults.") #2
@@ -173,43 +185,47 @@ Choice.create(choice: "Legalize it nationwide.", question_id: '2')
 Choice.create(choice: "Leave it up to the states", question_id: '2')
 Choice.create(choice: "Medical usage only, not recreational.", question_id: '2')
 Choice.create(choice: "Keep illegal.", question_id: '2')
+Choice.create(choice: "No Opinion.", question_id: '2')
 
 #Candidates' Answers
 QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "1", choice_source_URL: "https://blog.mpp.org/medical-marijuana/hillary-clinton-changes-her-tune-on-marijuana-policy/")
 QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "2", choice_source_URL: "https://mic.com/articles/123400/donald-trump-where-2016-candidate-stands-on-gun-control-marijuana-and-immigration")
 QuestionChoice.create(choice_id: "5", question_id: "2", candidate_id: "3", choice_source_URL: "http://www.michellelujangrisham.com/files/Michelle-Lujan-Grisham-Accomplishments.pdf")
+QuestionChoice.create(choice_id: "7", question_id: "2", candidate_id: "4")
 QuestionChoice.create(choice_id: "6", question_id: "2", candidate_id: "5")
-
 
 Question.create(question_topic: "Sam-Sex Marriage", question: "What is your position on same-sex marriage?", question_desc: "Does not define marriage on the basis of gender. Allows the same protections as heterosexual marriages.") #3
 Choice.create(choice: "For Same-Sex Marriage", question_id: '3')
 Choice.create(choice: "Against Same-Sex Marriage", question_id: '3')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "7", question_id: "3", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2015/jun/17/hillary-clinton/hillary-clinton-change-position-same-sex-marriage/")
-QuestionChoice.create(choice_id: "8", question_id: "3", candidate_id: "2", choice_source_URL: "http://www.hrc.org/2016RepublicanFacts/donald-trump-opposes-nationwide-marriage-equality")
-QuestionChoice.create(choice_id: "7", question_id: "3", candidate_id: "3")
-QuestionChoice.create(choice_id: "8", question_id: "3", candidate_id: "5")
+QuestionChoice.create(choice_id: "8", question_id: "3", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2015/jun/17/hillary-clinton/hillary-clinton-change-position-same-sex-marriage/")
+QuestionChoice.create(choice_id: "9", question_id: "3", candidate_id: "2", choice_source_URL: "http://www.hrc.org/2016RepublicanFacts/donald-trump-opposes-nationwide-marriage-equality")
+QuestionChoice.create(choice_id: "8", question_id: "3", candidate_id: "3")
+QuestionChoice.create(choice_id: "9", question_id: "3", candidate_id: "4")
+QuestionChoice.create(choice_id: "9", question_id: "3", candidate_id: "5")
 
 Question.create(question_topic: "Gun Control", question: "What is your position on gun control?", question_desc: "Gun control (or firearms regulation) is the set of laws or policies that regulate the manufacture, sale, transfer, possession, modification, or use of firearms by civilians.") #4
 Choice.create(choice: "More gun laws should be enacted.", question_id: '4')
 Choice.create(choice: "Less gun laws should be enacted.", question_id: '4')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "9", question_id: "4", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/gun-violence-prevention/")
-QuestionChoice.create(choice_id: "10", question_id: "4", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/constitution-and-second-amendment")
-QuestionChoice.create(choice_id: "9", question_id: "4", candidate_id: "3")
-QuestionChoice.create(choice_id: "10", question_id: "4", candidate_id: "5")
+QuestionChoice.create(choice_id: "10", question_id: "4", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/gun-violence-prevention/")
+QuestionChoice.create(choice_id: "11", question_id: "4", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/constitution-and-second-amendment")
+QuestionChoice.create(choice_id: "10", question_id: "4", candidate_id: "3")
+QuestionChoice.create(choice_id: "11", question_id: "4", candidate_id: "4")
+QuestionChoice.create(choice_id: "11", question_id: "4", candidate_id: "5")
 
 Question.create(question_topic: "Abortion", question: "What is your position on abortion?", question_desc: "The deliberate termination of a pregnancy.") #5
 Choice.create(choice: "Should be legal.", question_id: '5')
 Choice.create(choice: "Should be illegal.", question_id: '5')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "11", question_id: "5", candidate_id: "1", choice_source_URL: "http://www.ontheissues.org/2016/Hillary_Clinton_Abortion.htm")
-QuestionChoice.create(choice_id: "12", question_id: "5", candidate_id: "2", choice_source_URL: "http://www.ontheissues.org/2016/Donald_Trump_Abortion.htm")
-QuestionChoice.create(choice_id: "11", question_id: "5", candidate_id: "3")
-QuestionChoice.create(choice_id: "12", question_id: "5", candidate_id: "5")
+QuestionChoice.create(choice_id: "12", question_id: "5", candidate_id: "1", choice_source_URL: "http://www.ontheissues.org/2016/Hillary_Clinton_Abortion.htm")
+QuestionChoice.create(choice_id: "13", question_id: "5", candidate_id: "2", choice_source_URL: "http://www.ontheissues.org/2016/Donald_Trump_Abortion.htm")
+QuestionChoice.create(choice_id: "12", question_id: "5", candidate_id: "3")
+QuestionChoice.create(choice_id: "13", question_id: "5", candidate_id: "4")
+QuestionChoice.create(choice_id: "13", question_id: "5", candidate_id: "5")
 
 Question.create(question_topic: "Obamacare", question: "What is your position on Obamacare?", question_desc: "The Patient Protection and Affordable Care Act (PPACA), commonly called the Affordable Care Act (ACA) or Obamacare, is a United States federal statute enacted by President Barack Obama on March 23, 2010.") #6
 Choice.create(choice: "Should be kept.", question_id: '6')
@@ -217,10 +233,11 @@ Choice.create(choice: "Should be abolished.", question_id: '6')
 Choice.create(choice: "Should be kept, but altered.", question_id: '6')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "13", question_id: "6", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
-QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
-QuestionChoice.create(choice_id: "13", question_id: "6", candidate_id: "3")
-QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "5")
+QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/health-care/")
+QuestionChoice.create(choice_id: "15", question_id: "6", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/positions/healthcare-reform")
+QuestionChoice.create(choice_id: "14", question_id: "6", candidate_id: "3")
+QuestionChoice.create(choice_id: "15", question_id: "6", candidate_id: "4")
+QuestionChoice.create(choice_id: "15", question_id: "6", candidate_id: "5")
 
 Question.create(question_topic: "Education", question: "Where do you stand on the United States education system?") #7
 Choice.create(choice: "For Vouchers", question_id: '7')
@@ -232,36 +249,39 @@ Choice.create(choice: "Against Common Core", question_id: '7')
 Choice.create(choice: "Opinion varies", question_id: '7')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "22", question_id: "7", candidate_id: "1", choice_source_URL: "https://www.washingtonpost.com/news/answer-sheet/wp/2015/04/20/what-hillary-clinton-said-about-the-common-core-state-standards/")
-QuestionChoice.create(choice_id: "21", question_id: "7", candidate_id: "2", choice_source_URL: "http://www.npr.org/sections/ed/2016/11/10/501426803/can-president-trump-get-rid-of-common-core")
-QuestionChoice.create(choice_id: "20", question_id: "7", candidate_id: "3")
-QuestionChoice.create(choice_id: "15", question_id: "7", candidate_id: "5")
+QuestionChoice.create(choice_id: "23", question_id: "7", candidate_id: "1", choice_source_URL: "https://www.washingtonpost.com/news/answer-sheet/wp/2015/04/20/what-hillary-clinton-said-about-the-common-core-state-standards/")
+QuestionChoice.create(choice_id: "22", question_id: "7", candidate_id: "2", choice_source_URL: "http://www.npr.org/sections/ed/2016/11/10/501426803/can-president-trump-get-rid-of-common-core")
+QuestionChoice.create(choice_id: "21", question_id: "7", candidate_id: "3")
+QuestionChoice.create(choice_id: "17", question_id: "7", candidate_id: "4")
+QuestionChoice.create(choice_id: "17", question_id: "7", candidate_id: "5")
 
 Question.create(question_topic: "Immigration", question: "Where do you stand on immigration?", question_desc: "The United States Department of Homeland Security (DHS) has estimated that 11.4 million unauthorized immigrants lived in the United States in January 2012.") #8
 Choice.create(choice: "Undocumented immigrants should be deported.", question_id: '8')
 Choice.create(choice: "Undocumented immigrants should be given a path to citizenship.", question_id: '8')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
-QuestionChoice.create(choice_id: "23", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
-QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "3")
-QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "5")
+QuestionChoice.create(choice_id: "25", question_id: "8", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/immigration-reform/")
+QuestionChoice.create(choice_id: "24", question_id: "8", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/immigration")
+QuestionChoice.create(choice_id: "25", question_id: "8", candidate_id: "3")
+QuestionChoice.create(choice_id: "25", question_id: "8", candidate_id: "4")
+QuestionChoice.create(choice_id: "25", question_id: "8", candidate_id: "5")
 
 Question.create(question_topic: "Fracking", question: "What is your opinion on fracking?", question_desc: "Fracking is the process of injecting liquid at high pressure into subterranean rocks, boreholes, etc., so as to force open existing fissures and extract oil or gas.") #9
 Choice.create(choice: "Fracking should be allowed.", question_id: '9')
 Choice.create(choice: "Fracking is dangerous, should be halted.", question_id: '9')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "25", question_id: "9", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/apr/13/bernie-s/does-hillary-clinton-support-fracking/")
-QuestionChoice.create(choice_id: "25", question_id: "9", candidate_id: "2", choice_source_URL: "http://thehill.com/policy/energy-environment/290186-trump-rattles-industry-with-fracking-position")
-QuestionChoice.create(choice_id: "26", question_id: "9", candidate_id: "3")
+QuestionChoice.create(choice_id: "26", question_id: "9", candidate_id: "1", choice_source_URL: "http://www.politifact.com/truth-o-meter/statements/2016/apr/13/bernie-s/does-hillary-clinton-support-fracking/")
+QuestionChoice.create(choice_id: "26", question_id: "9", candidate_id: "2", choice_source_URL: "http://thehill.com/policy/energy-environment/290186-trump-rattles-industry-with-fracking-position")
+QuestionChoice.create(choice_id: "27", question_id: "9", candidate_id: "3")
 
 Question.create(question_topic: "Taxes", question: "What would you like done in regards to taxes on the middle class?") #10
 Choice.create(choice: "Lower taxes on middle class.", question_id: '10')
 Choice.create(choice: "Raise taxes on middle class.", question_id: '10')
 
 #Candidates' Answers
-QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
-QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
-QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "3")
-QuestionChoice.create(choice_id: "27", question_id: "10", candidate_id: "5")
+QuestionChoice.create(choice_id: "28", question_id: "10", candidate_id: "1", choice_source_URL: "https://www.hillaryclinton.com/issues/a-fair-tax-system/")
+QuestionChoice.create(choice_id: "28", question_id: "10", candidate_id: "2", choice_source_URL: "https://www.donaldjtrump.com/policies/tax-plan")
+QuestionChoice.create(choice_id: "28", question_id: "10", candidate_id: "3")
+QuestionChoice.create(choice_id: "28", question_id: "10", candidate_id: "4")
+QuestionChoice.create(choice_id: "28", question_id: "10", candidate_id: "5")
