@@ -70,3 +70,42 @@
       </tbody>
   </table>
 <% end %>
+<% if @candidates.where(office_type: "County").present? %>
+<h3>County Races</h3>
+  <table class="detail-table candidate-table-state">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>State</th>
+              <th>Party</th>
+              <th>Incumbent</th>
+              <th>Candidacy</th>
+              <th>E-Mail</th>
+              <th>Website</th>
+              <th>Details</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @candidates.each do |candidate| %>
+        <% if candidate.office_type == "County" %>
+          <tr>
+              <td><%= candidate.first_name + " " + candidate.last_name %></td>
+              <td>
+                <% @cur_precinct = Precinct.where(id: candidate.precinct_id) %>
+                <% @cur_city = City.where(id: @cur_precinct.first.city_id) %>
+                <% @cur_county = County.where(id: @cur_city.first.county_id) %>
+                <% @cur_state = State.where(id: @cur_county.first.state_id) %>
+                <%= @cur_state.first.state_name %>
+              </td>
+              <td><% if candidate.pol_Aff %><%= candidate.pol_Aff %><% else %>N/A<% end %></td>
+              <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
+              <td><%= candidate.running_for %></td>
+              <td><% if candidate.email.present? %><a href="<%= candidate.email %>">Contact</a><% else %>N/A<% end%></td>
+              <td><% if candidate.pol_URL.present? %><a href="<%= candidate.pol_URL %>">Link</a><% else %>N/A<% end%></td>
+              <td><%= link_to 'More...', candidate %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+  </table>
+<% end %>
