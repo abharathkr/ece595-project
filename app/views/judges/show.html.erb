@@ -13,26 +13,11 @@
   </ul>
 <% end %>
 <p><%= @judge.biography %></p>
-<% if @decisions.present? %>
-<h3>Recent Decisions</h3>
-  <table class="detail-table judge-decision-table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Decision</th>
-            <th>Date</th>
-            <th>Decision Source</th>
-        </tr>
-    </thead>
-    <tbody>
-      <% @decisions.each do |decision| %>
-        <tr>
-            <td><%= decision.decision_title%></td>
-            <td><%= decision.decision_position%></td>
-            <td><%= decision.decision_date%></td>
-            <td><% if decision.decision_source_URL.present?%><a href="<%= decision.decision_source_URL %>">Source</a><% else %>N/A<% end %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<% if @honors.present? %>
+<h3>Honors Received</h3>
+<ul class="seed-list">
+  <% @honors.each do |honor| %>
+  <li><%= honor.description%></li>
+  <% end %>
+</ul>
 <% end %>

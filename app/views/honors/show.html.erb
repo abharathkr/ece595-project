@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @honor.description %>
+</p>
+
+<p>
+  <strong>Judge:</strong>
+  <%= @honor.judge %>
+</p>
+
+<%= link_to 'Edit', edit_honor_path(@honor) %> |
+<%= link_to 'Back', honors_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #resources :honors
   resources :question_choices, except: [:index, :show, :edit, :update, :destroy]
   #resources :choices
   #resources :decisions

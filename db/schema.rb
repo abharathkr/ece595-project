@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129204218) do
+ActiveRecord::Schema.define(version: 20161202182748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,14 @@ ActiveRecord::Schema.define(version: 20161129204218) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["precinct_id"], name: "index_divisions_on_precinct_id", using: :btree
+  end
+
+  create_table "honors", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "judge_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["judge_id"], name: "index_honors_on_judge_id", using: :btree
   end
 
   create_table "judges", force: :cascade do |t|
@@ -203,6 +211,7 @@ ActiveRecord::Schema.define(version: 20161129204218) do
   add_foreign_key "counties", "states"
   add_foreign_key "decisions", "judges"
   add_foreign_key "divisions", "precincts"
+  add_foreign_key "honors", "judges"
   add_foreign_key "judges", "ballots"
   add_foreign_key "judges", "precincts"
   add_foreign_key "precincts", "cities"

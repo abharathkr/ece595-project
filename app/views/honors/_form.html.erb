@@ -1,0 +1,27 @@
+<%= form_for(honor) do |f| %>
+  <% if honor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(honor.errors.count, "error") %> prohibited this honor from being saved:</h2>
+
+      <ul>
+      <% honor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :judge_id %>
+    <%= f.text_field :judge_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

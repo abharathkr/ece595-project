@@ -125,6 +125,11 @@ Judge.create(first_name: "Christine", last_name: "Rodriguez", running_for: "Just
 Judge.create(first_name: "Renee", last_name: "Torres", running_for: "Justice of the Metropolitan Court", isSitting: false, biography: "Renée Torres – native New Mexican, life-long Democrat and Chief Judge of the Zia Tribal Court – is running for Metropolitan Court Judge in Bernalillo County. She is running for Division 3 and will be on the June 7, Democratic Primary Election ballot. She will bring experience, fairness and integrity to the bench.", email: "http://www.electreneetorres.com/contact.html")
 Decision.create(decision_title: "Man v. The World", decision_desc: "Man blames the world for his problems.", decision_position: "Found in favor of the World.", decision_date: Date.parse("2015-02-12"), judge_id: '1')
 
+#Judge Honors
+Honor.create(judge_id: '2', description: "MADD’s national judge of the year for combating DWI.")
+Honor.create(judge_id: '3', description: "Judge Vigil is a member of the New Mexico Sentencing Commission and received the “Native Hispanic Hero Award” from the NM House of Representatives.")
+Honor.create(judge_id: '4', description: "2014- received the NMDLA Outstanding Civil Defense Lawyer award.")
+
 #Issues
 Referenda.create(referenda_title: "Library Bonds", referenda_desc: "Will allow purchase of equipment of new materials such as computers and books within libraries in Bernalillo County.", referenda_type: "bonds", referenda_amt: "$1,500,000")
 Referenda.create(referenda_title: "Public Safety Facilities and Other County Buildings Bonds", referenda_desc: "To pay for purchase of new property and construction to improve or update fire stations, law enforcement, animal welfare and library facilities. Funding also pays necessary costs to get these facilities to meet the Americans with Disabilities Standards Act requirements.", referenda_type: "bonds", referenda_amt: "$8,350,000")

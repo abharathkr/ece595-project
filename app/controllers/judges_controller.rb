@@ -10,7 +10,8 @@ class JudgesController < ApplicationController
   # GET /judges/1
   # GET /judges/1.json
   def show
-    @decisions = Decision.where(judge_id: @judge.id).order(decision_date: :desc)
+    #@decisions = Decision.where(judge_id: @judge.id).order(decision_date: :desc)
+    @honors = Honor.where(judge_id: @judge.id)
     if @judge.precinct_id.present? && Precinct.where(id: @judge.precinct_id).present?
       @precincts = Precinct.where(id: @judge.precinct_id)
       @cities = City.where(id: @precincts.first.city_id)
