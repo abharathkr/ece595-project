@@ -6,4 +6,4 @@
   <li>(<%= @judges.size %>) Judges(s)</li>
   <li>(<%= @referendas.size %>) Referendum(s)</li>
 </ul>
-<p>We are currently matching (<%= @voters.size %>) total voter(s) from (<%=@voters.select(:zip_code).distinct.size %>) ZIP code(s).</p>
+<p>We are currently matching (<%= @voters.count %>) total voter(s) from (<%=@voters.select(:zip_code).distinct.count %>) ZIP code(s).</p>
