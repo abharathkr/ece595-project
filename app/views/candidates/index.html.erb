@@ -72,11 +72,12 @@
 <% end %>
 <% if @candidates.where(office_type: "County").present? %>
 <h3>County Races</h3>
-  <table class="detail-table candidate-table-state">
+  <table class="detail-table candidate-table-county">
       <thead>
           <tr>
               <th>Name</th>
               <th>State</th>
+              <th>County</th>
               <th>Party</th>
               <th>Incumbent</th>
               <th>Candidacy</th>
@@ -97,6 +98,7 @@
                 <% @cur_state = State.where(id: @cur_county.first.state_id) %>
                 <%= @cur_state.first.state_name %>
               </td>
+              <td><%= @cur_county.first.county_name %></td>
               <td><% if candidate.pol_Aff %><%= candidate.pol_Aff %><% else %>N/A<% end %></td>
               <td><% if candidate.isEncumbent%>Yes<% else %>No<% end %></td>
               <td><%= candidate.running_for %></td>
