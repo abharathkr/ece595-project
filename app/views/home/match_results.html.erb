@@ -128,8 +128,9 @@
 <% if @candidates.where(office_type: "State").present? && @cur_precinct.present? %>
     <h1>State Races</h1>
     <% @candidates.each do |candidate| %>
+    <% @increment = 0 %>
       <% @cur_precinct.each do |precinct| %>
-        <% if candidate.office_type == "State" && precinct.precinct_id == candidate.precinct_id %>
+        <% if candidate.office_type == "State" && precinct.precinct_id == candidate.precinct_id && @increment == 0 %>
             <!-- Get Candidate Stuff -->
             <% if QuestionChoice.where(candidate_id: candidate.id).present? %>
               <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id) %>
@@ -187,6 +188,7 @@
                     <% end %>
                 </tbody>
             </table>
+            <% @increment = 1 %>
             <% end %>
           <% end %>
       <% end %>
