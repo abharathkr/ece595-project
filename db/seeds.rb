@@ -359,7 +359,7 @@ QuestionChoice.create(choice_id: "4", question_id: "2", candidate_id: "53")
 QuestionChoice.create(choice_id: "6", question_id: "2", candidate_id: "54")
 QuestionChoice.create(choice_id: "4", question_id: "2", candidate_id: "55")
 
-Question.create(question_topic: "Sam-Sex Marriage", question: "What is your position on same-sex marriage?", question_desc: "Does not define marriage on the basis of gender. Allows the same protections as heterosexual marriages.") #3
+Question.create(question_topic: "Same-Sex Marriage", question: "What is your position on same-sex marriage?", question_desc: "Does not define marriage on the basis of gender. Allows the same protections as heterosexual marriages.") #3
 Choice.create(choice: "For Same-Sex Marriage", question_id: '3')
 Choice.create(choice: "Against Same-Sex Marriage", question_id: '3')
 Choice.create(choice: "No opinion/Neutral", question_id: '3')
