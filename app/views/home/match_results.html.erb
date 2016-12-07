@@ -36,7 +36,7 @@
   <% @cur_voter = Voter.where(session_id: params[:match_id]) %>
   <% @cur_voter = @cur_voter.first.id %>
   <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
-    <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
+    <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter).order(question_id: :asc) %>
   <% else %>
     <script type="text/javascript">window.location.href="<%= match_start %>"</script>
   <% end %>
@@ -46,7 +46,7 @@
     <% @cur_voter = Voter.where(session_id: session[:session_id]) %>
     <% @cur_voter = @cur_voter.first.id %>
     <% if QuestionChoice.where(voter_id: @cur_voter).present? %>
-      <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter) %>
+      <% @cur_voter_stances = QuestionChoice.where(voter_id: @cur_voter).order(question_id: :asc) %>
     <% else %>
       <script type="text/javascript">window.location.href="<%= match_start %>"</script>
     <% end %>
@@ -62,7 +62,7 @@
         <% if candidate.office_type == "National" %>
             <!-- Get Candidate Stuff -->
             <% if QuestionChoice.where(candidate_id: candidate.id).present? %>
-              <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id) %>
+              <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id).order(question_id: :asc) %>
               <% @cur_can_null = true %>
             <% else %>
               <% @cur_can_null = false %>
@@ -133,7 +133,7 @@
         <% if candidate.office_type == "State" && precinct.precinct_id == candidate.precinct_id && @increment == 0 %>
             <!-- Get Candidate Stuff -->
             <% if QuestionChoice.where(candidate_id: candidate.id).present? %>
-              <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id) %>
+              <% @cur_can_stances = QuestionChoice.where(candidate_id: candidate.id).order(question_id: :asc) %>
               <% @cur_can_null = true %>
             <% else %>
               <% @cur_can_null = false %>
